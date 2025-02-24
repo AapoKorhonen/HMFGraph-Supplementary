@@ -15,6 +15,17 @@ library(parallel)
 library(doSNOW)
 library(foreach)
 library(progress)
+library(devtools)
+#devtools::install_github("gleday/beam")
+library(beam)
+library(PCGII)
+library(rags2ridges)
+library(flare)
+library(thav.glasso)
+#devtools::install_github('apatrone2/thav.glasso')
+#install.packages(c("MASS", "igraph", "stargazer", "huge", "matrixcalc", "glasso", "scalreg", "genscore", "scio", "ggplot2"))
+library(HMFGraph)
+
 
 source("functions/functions_for_result_handeling.R")
 
