@@ -7,3 +7,12 @@
 # install.packages("devtools")
 devtools::install_github("AapoKorhonen/HMFGraph")
 ```
+
+``` r
+install.packages("aricode")
+install.packages("pulsar")
+install.packages("huge")
+install.packages("BDgraph")
+install.packages("igraph")
+install.packages("qgraph")
+```
