@@ -1,5 +1,3 @@
-
-
 #========================
 # Gut data 
 #========================
@@ -21,13 +19,12 @@ dim(data_R)
 data_R <- huge::huge.npn(data_R)
 daatta <- data_R
 
-tax <- tax_table(amgut2.filt.phy)
+tax <- tax_table(amgut2.filt.phy)[,4]
 tax_data <- tax@.Data
 rownames(tax_data) <- 1:138
-taxas
 indices <- list()
-for (taxa in taxas) {
-  indices[[taxa]] <- which(tax_data[,4] == taxa)
+for (taxa in tax) {
+  indices[[taxa]] <- which(tax_data == taxa)
 }
 
 

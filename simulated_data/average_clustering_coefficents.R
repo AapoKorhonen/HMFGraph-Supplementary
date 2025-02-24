@@ -1,10 +1,13 @@
+########################################################################################
+# This file is used to calculate the average clustering coefficent (ACC) for the 
+# all simulated data
+########################################################################################
 
-
+library(igraph)
 
 load(file = "simulated_data/bdgraph/cluster_p_100_n_35_bdgraph_adjacency.RData")
 load(file = "simulated_data/bdgraph/cluster_p_100_n_75_bdgraph_adjacency.RData")
 load(file = "simulated_data/bdgraph/cluster_p_100_n_150_bdgraph_adjacency.RData")
-load(file = "simulated_data/bdgraph/cluster_p_200_n_100_bdgraph_adjacency.RData")
 load(file = "simulated_data/bdgraph/cluster_p_100_n_300_bdgraph_adjacency.RData")
 
 
@@ -29,12 +32,12 @@ for(i in 1:50){
 
 mean(cc)
 
+# The mean of ACC for BDgraph is 0.1951322
 
 
 load(file = "simulated_data/huge/cluster_p_100_n_35_huge_adjacency.RData")
 load(file = "simulated_data/huge/cluster_p_100_n_75_huge_adjacency.RData")
 load(file = "simulated_data/huge/cluster_p_100_n_150_huge_adjacency.RData")
-load(file = "simulated_data/huge/cluster_p_200_n_100_huge_adjacency.RData")
 load(file = "simulated_data/huge/cluster_p_100_n_300_huge_adjacency.RData")
 
 
@@ -57,3 +60,4 @@ for(i in 1:50){
 
 mean(cc)
 
+# The mean of ACC for huge is 0.303394
