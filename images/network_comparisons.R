@@ -35,7 +35,7 @@ names <- c("accuracy", "bal-accuracy", "MCC", "F1", "TPR", "TNR", "PPV","NPV", "
            "FPR","FOR", "LRp", "LRn", "FDR", "ACC", "NMI")
 
 Value <- 4 # F1 
-
+round_value <- 2
 
 source("functions/functions_for_result_handeling.R")
 
@@ -85,25 +85,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_G_wishart_scale_free_p100_n300_huge_data.RData")
 admat <- results_G_wishart_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_G_wishart_cluster_p100_n300_huge_data.RData")
 admat <- results_G_wishart_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_G_wishart_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_G_wishart_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_G_wishart_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_G_wishart_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -118,25 +118,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_TIGER_scale_free_p100_n300_huge_data.RData")
 admat <- results_TIGER_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_TIGER_cluster_p100_n300_huge_data.RData")
 admat <- results_TIGER_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_TIGER_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_TIGER_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_TIGER_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_TIGER_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -151,25 +151,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_glasso_scale_free_p100_n300_huge_data.RData")
 admat <- results_glasso_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_glasso_cluster_p100_n300_huge_data.RData")
 admat <- results_glasso_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_glasso_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_glasso_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_glasso_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_glasso_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -184,25 +184,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_THAV_scale_free_p100_n300_huge_data.RData")
 admat <- results_THAV_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_THAV_cluster_p100_n300_huge_data.RData")
 admat <- results_THAV_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_THAV_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_THAV_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_THAV_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_THAV_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -217,26 +217,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_scale_free_p100_n300_huge_data.RData")
 admat <- results_clevel_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_cluster_p100_n300_huge_data.RData")
 admat <- results_clevel_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_clevel_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_clevel_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-results_clevel_scale_free_p100_n300_bdgraph_data
 load(file="results/bdgraph/results_clevel_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_clevel_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -251,25 +250,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_d_scale_free_p100_n300_huge_data.RData")
 admat <- results_clevel_d_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_d_cluster_p100_n300_huge_data.RData")
 admat <- results_clevel_d_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_clevel_d_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_clevel_d_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_clevel_d_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_clevel_d_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -284,26 +283,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_beam_scale_free_p100_n300_huge_data.RData")
 admat <- results_beam_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_beam_cluster_p100_n300_huge_data.RData")
 admat <- results_beam_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_beam_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_beam_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-results_beam_scale_free_p100_n300_bdgraph_data
 load(file="results/bdgraph/results_beam_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_beam_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,round_value)))
 
 
 dev.off()
@@ -319,25 +317,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z_CC_scale_free_p100_n300_huge_data.RData")
 admat <- results_HMF_Z_CC_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z_CC_cluster_p100_n300_huge_data.RData")
 admat <- results_HMF_Z_CC_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z_CC_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_HMF_Z_CC_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 
 
 dev.off()
@@ -353,25 +351,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z_scale_free_p100_n300_huge_data.RData")
 admat <- results_HMF_Z_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z_cluster_p100_n300_huge_data.RData")
 admat <- results_HMF_Z_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_HMF_Z_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_HMF_Z_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,round_value)))
 
 dev.off()
 #========================
@@ -386,25 +384,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z2x_scale_free_p100_n300_huge_data.RData")
 admat <- results_HMF_Z2x_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_HMF_Z2x_cluster_p100_n300_huge_data.RData")
 admat <- results_HMF_Z2x_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z2x_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_HMF_Z2x_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_HMF_Z2x_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_HMF_Z2x_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,round_value)))
 
 
 dev.off()
