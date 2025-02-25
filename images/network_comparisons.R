@@ -14,16 +14,30 @@ library(beam)
 library(PRROC)
 library(PCGII)
 
+# 1 = accuracy, 
+# 2 = balanced accuracy, 
+# 3 = MCC, 
+# 4 = F1,
+# 5 = TPR, 
+# 6 = TNR, 
+# 7 = PPV, 
+# 8 = NPV,
+# 9 = FNR, 
+# 10 = FPR, 
+# 11 = FOR, 
+# 12 = LRp,
+# 13 = LRn, 
+# 14 = FDR, 
+# 15 = Averace Clustering coefficients (ACC), 
+# 16 = NMI
 
-source("libraries/libraries.r")
+names <- c("accuracy", "bal-accuracy", "MCC", "F1", "TPR", "TNR", "PPV","NPV", "FNR",
+           "FPR","FOR", "LRp", "LRn", "FDR", "ACC", "NMI")
 
-source("functions/conf_matrix_scores.R")
+Value <- 4 # F1 
 
-source("functions/confusion_matrix.R")
 
-source("functions/Data_generator.R")
-
-source("functions/adjacency_matrix.R")
+source("functions/functions_for_result_handeling.R")
 
 load(file = "simulated_data/huge/scale_free_p_100_n_300_huge_data.RData")
 load(file = "simulated_data/huge/scale_free_p_100_n_300_huge_adjacency.RData")
@@ -37,16 +51,19 @@ load(file = "simulated_data/bdgraph/scale_free_p_100_n_300_bdgraph_adjacency.RDa
 load(file = "simulated_data/bdgraph/cluster_p_100_n_300_bdgraph_data.RData")
 load(file = "simulated_data/bdgraph/cluster_p_100_n_300_bdgraph_adjacency.RData")
 
+setEPS()
+postscript("true_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
 data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
-plot_adjacency_matrix(adjacency_correct,title="Huge, Scale-free")
+qgraph::qgraph(adjacency_correct,title="huge, Scale-free")
 data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-plot_adjacency_matrix(adjacency_correct,title="Huge, Cluster")
+qgraph::qgraph(adjacency_correct,title="huge, Cluster")
 data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-plot_adjacency_matrix(adjacency_correct,title="bdgraph, Scale-free")
+qgraph::qgraph(adjacency_correct,title="BDgraph, Scale-free")
 data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-plot_adjacency_matrix(adjacency_correct,title="bdgraph, Cluster")
+qgraph::qgraph(adjacency_correct,title="BDgraph, Cluster")
 
 n <- dim(scale_free_p_100_n_300_huge_data)[1]
 p <- dim(scale_free_p_100_n_300_huge_data)[2]
@@ -55,452 +72,339 @@ sum(cluster_p_100_n_300_huge_adjacency[,,1])/2
 
 sum(cluster_p_100_n_300_bdgraph_adjacency[,,1])/2
 
+dev.off()
 #========================
 # GWISHART
 #========================
+setEPS()
+postscript("G_wishart_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_G_wishart_scale_free_p100_n300_huge_data.RData")
+admat <- results_G_wishart_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
 
-bdgraph.obj = bdgraph( data =data_R,n=n,verbose = FALSE )
-admat <- bdgraph.obj$p_links
-admat[admat >= 0.5] <- 1
-admat[admat < 0.5] <- 0
-diag(admat) <- 0 
-admat <- admat + t(admat)
-plot_adjacency_matrix(admat,title="G-WISHART")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_G_wishart_cluster_p100_n300_huge_data.RData")
+admat <- results_G_wishart_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_G_wishart_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_G_wishart_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
 
-bdgraph.obj = bdgraph( data =data_R,n=n,verbose = FALSE )
-admat <- bdgraph.obj$p_links
-admat[admat >= 0.5] <- 1
-admat[admat < 0.5] <- 0
-diag(admat) <- 0 
-admat <- admat + t(admat)
-plot_adjacency_matrix(admat,title="G-WISHART")
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_G_wishart_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_G_wishart_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("G-WISHART, ",names[Value]," = ",round(V,2)))
 
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-bdgraph.obj = bdgraph( data =data_R,n=n,verbose = FALSE )
-admat <- bdgraph.obj$p_links
-admat[admat >= 0.5] <- 1
-admat[admat < 0.5] <- 0
-diag(admat) <- 0 
-admat <- admat + t(admat)
-plot_adjacency_matrix(admat,title="G-WISHART")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-bdgraph.obj = bdgraph( data =data_R,n=n,verbose = FALSE )
-admat <- bdgraph.obj$p_links
-admat[admat >= 0.5] <- 1
-admat[admat < 0.5] <- 0
-diag(admat) <- 0 
-admat <- admat + t(admat)
-plot_adjacency_matrix(admat,title="G-WISHART")
-
-
+dev.off()
 #========================
 # TIGER
 #========================
-library(flare)
-library(rags2ridges)
+setEPS()
+postscript("TIGER_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_TIGER_scale_free_p100_n300_huge_data.RData")
+admat <- results_TIGER_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_TIGER_cluster_p100_n300_huge_data.RData")
+admat <- results_TIGER_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
 
-results_tiger <- flare::sugm(data = data_R,
-                             method = "tiger",
-                             sym = "or")
-admat <-   adjacentMat(as.matrix(results_tiger$path[5][[1]]))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="TIGER")
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_TIGER_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_TIGER_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_TIGER_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_TIGER_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("TIGER, ",names[Value]," = ",round(V,2)))
 
-
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-results_tiger <- flare::sugm(data = data_R,
-                             method = "tiger",
-                             sym = "or")
-admat <-   adjacentMat(as.matrix(results_tiger$path[5][[1]]))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="TIGER")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-results_tiger <- flare::sugm(data = data_R,
-                             method = "tiger",
-                             sym = "or")
-admat <-   adjacentMat(as.matrix(results_tiger$path[5][[1]]))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="TIGER")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-results_tiger <- flare::sugm(data = data_R,
-                             method = "tiger",
-                             sym = "or")
-admat <-   adjacentMat(as.matrix(results_tiger$path[5][[1]]))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="TIGER")
-
-
+dev.off()
 #========================
 # Glasso
 #========================
+setEPS()
+postscript("Glasso_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_glasso_scale_free_p100_n300_huge_data.RData")
+admat <- results_glasso_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
 
-lmax <- pulsar::getMaxCov(cov(data_R))
-lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
-out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
-                           criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
-fit.p    <- pulsar::refit(out.p)
-admat <-  adjacentMat(as.matrix(fit.p$refit$stars))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="Glasso, Stars")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_glasso_cluster_p100_n300_huge_data.RData")
+admat <- results_glasso_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_glasso_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_glasso_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_glasso_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_glasso_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("glasso, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-lmax <- pulsar::getMaxCov(cov(data_R))
-lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
-out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
-                           criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
-fit.p    <- pulsar::refit(out.p)
-admat <-  adjacentMat(as.matrix(fit.p$refit$stars))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="Glasso, Stars")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-lmax <- pulsar::getMaxCov(cov(data_R))
-lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
-out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
-                           criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
-fit.p    <- pulsar::refit(out.p)
-admat <-  adjacentMat(as.matrix(fit.p$refit$stars))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="Glasso, Stars")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-lmax <- pulsar::getMaxCov(cov(data_R))
-lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
-out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
-                           criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
-fit.p    <- pulsar::refit(out.p)
-admat <-  adjacentMat(as.matrix(fit.p$refit$stars))
-diag(admat) <- 0
-plot_adjacency_matrix(admat,title="Glasso, Stars")
-
-
+dev.off()
 #========================
 # THAV
 #========================
+setEPS()
+postscript("THAV_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_THAV_scale_free_p100_n300_huge_data.RData")
+admat <- results_THAV_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
 
-thav.glasso::load_libraries()
-thav <- thav.glasso::thAV.estimator(data_R)
-thav[abs(thav)>0] <- 1 
-diag(thav) <- 0
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_THAV_cluster_p100_n300_huge_data.RData")
+admat <- results_THAV_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
 
-plot_adjacency_matrix(thav,title="thav")
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_THAV_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_THAV_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_THAV_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_THAV_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("THAV, ",names[Value]," = ",round(V,2)))
 
-
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-thav.glasso::load_libraries()
-thav <- thav.glasso::thAV.estimator(data_R)
-thav[abs(thav)>0] <- 1 
-diag(thav) <- 0
-
-plot_adjacency_matrix(thav,title="thav")
-
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-thav.glasso::load_libraries()
-thav <- thav.glasso::thAV.estimator(data_R)
-thav[abs(thav)>0] <- 1 
-diag(thav) <- 0
-
-plot_adjacency_matrix(thav,title="thav")
-
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-thav.glasso::load_libraries()
-thav <- thav.glasso::thAV.estimator(data_R)
-thav[abs(thav)>0] <- 1 
-diag(thav) <- 0
-
-plot_adjacency_matrix(thav,title="thav")
-
-
+dev.off()
 #========================
 # CLEVEL
 #========================
+setEPS()
+postscript("Clevel_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_clevel_scale_free_p100_n300_huge_data.RData")
+admat <- results_clevel_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
 
-CLEVEL.out = clevel(df = data_R)
-inference_out = inference(CLEVEL.out)
-admat <- adjacentMat(inference_out)
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="CLEVEL")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_clevel_cluster_p100_n300_huge_data.RData")
+admat <- results_clevel_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_clevel_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_clevel_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+results_clevel_scale_free_p100_n300_bdgraph_data
+load(file="results/bdgraph/results_clevel_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_clevel_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, ",names[Value]," = ",round(V,2)))
 
-CLEVEL.out = clevel(df = data_R)
-inference_out = inference(CLEVEL.out)
-admat <- adjacentMat(inference_out)
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="CLEVEL")
-
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-CLEVEL.out = clevel(df = data_R)
-inference_out = inference(CLEVEL.out)
-admat <- adjacentMat(inference_out)
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="CLEVEL")
-
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-CLEVEL.out = clevel(df = data_R)
-inference_out = inference(CLEVEL.out)
-admat <- adjacentMat(inference_out)
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="CLEVEL")
+dev.off()
+#========================
+# CLEVEL, default
+#========================
+setEPS()
+postscript("clevel_D_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
 
 
+par(mfrow=c(1,4))
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_clevel_d_scale_free_p100_n300_huge_data.RData")
+admat <- results_clevel_d_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_clevel_d_cluster_p100_n300_huge_data.RData")
+admat <- results_clevel_d_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_clevel_d_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_clevel_d_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_clevel_d_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_clevel_d_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("clevel, default, ",names[Value]," = ",round(V,2)))
+
+dev.off()
 #========================
 # BEAM
 #========================
+setEPS()
+postscript("beam_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
 
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_beam_scale_free_p100_n300_huge_data.RData")
+admat <- results_beam_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
 
-fit <- beam(X =  data_R, type="conditional")
-sel <- beam.select(fit, method = "BH")
-summary(fit)
-myigraph <- ugraph(sel)
-admat10 <- as_adjacency_matrix(myigraph, sparse = F)
-plot_adjacency_matrix(adjacentMat(admat10),title="beam")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_beam_cluster_p100_n300_huge_data.RData")
+admat <- results_beam_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_beam_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_beam_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-fit <- beam(X =  data_R, type="conditional")
-sel <- beam.select(fit, method = "BH")
-summary(fit)
-myigraph <- ugraph(sel)
-admat10 <- as_adjacency_matrix(myigraph, sparse = F)
-plot_adjacency_matrix(adjacentMat(admat10),title="beam")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-fit <- beam(X =  data_R, type="conditional")
-sel <- beam.select(fit, method = "BH")
-summary(fit)
-myigraph <- ugraph(sel)
-admat10 <- as_adjacency_matrix(myigraph, sparse = F)
-plot_adjacency_matrix(adjacentMat(admat10),title="beam")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-fit <- beam(X =  data_R, type="conditional")
-sel <- beam.select(fit, method = "BH")
-summary(fit)
-myigraph <- ugraph(sel)
-admat10 <- as_adjacency_matrix(myigraph, sparse = F)
-plot_adjacency_matrix(adjacentMat(admat10),title="beam")
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+results_beam_scale_free_p100_n300_bdgraph_data
+load(file="results/bdgraph/results_beam_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_beam_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,2)))
 
 
-
+dev.off()
 #========================
 # HMFGraph, alpha = CC
 #========================
-library(HMFGraph)
+setEPS()
+postscript("HMFGraph_CC_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
+
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_CC_scale_free_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_CC_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
 
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                      B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_CC_cluster_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_CC_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                      B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                      B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                      B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_CC_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_HMF_Z_CC_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,2)))
 
 
-
-
+dev.off()
 #========================
 # HMFGraph, alpha = 10*p/(10*p+n)
 #========================
-library(HMFGraph)
+setEPS()
+postscript("HMFGraph_10x_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
+
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_scale_free_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
 
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =10*p/(10*p+n), epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_cluster_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
 
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_HMF_Z_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_HMF_Z_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 10x, ",names[Value]," = ",round(V,2)))
 
-
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =10*p/(10*p+n), epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =10*p/(10*p+n), epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =10*p/(10*p+n), epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
+dev.off()
 #========================
-# HMFGraph, alpha = CC
+# HMFGraph, alpha = 2*p/(2*p+n)
 #========================
-library(HMFGraph)
+setEPS()
+postscript("HMFGraph_2x_networks.eps", width = 12, height = 3)   # koko oletuksena tuumina
+
+
 par(mfrow=c(1,4))
-data_R <-scale_free_p_100_n_300_huge_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z2x_scale_free_p100_n300_huge_data.RData")
+admat <- results_HMF_Z2x_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
 
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z2x_cluster_p100_n300_huge_data.RData")
+admat <- results_HMF_Z2x_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z2x_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_HMF_Z2x_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
+
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z2x_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_HMF_Z2x_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, 2x, ",names[Value]," = ",round(V,2)))
 
 
-data_R <-cluster_p_100_n_300_huge_data[,,1]; adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-scale_free_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
-data_R <-cluster_p_100_n_300_bdgraph_data[,,1]; adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-
-est <-  nlshrink::linshrink_cov(data_R)
-kappa_max <- max(eigen(est)$values)/min(eigen(est)$values)
-alpha <- alpha_selector_eigen(data_R,0.2, kappa_max,beta=0.9)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, max_iters=10000,stop_criterion=10^-6,n= n,p=p,fixed_B=F,beta=0.9, alpha =alpha, epsilon1=0, epsilon2=0,
-                                B=diag(p), inter = 100, print_t=F)
-permutations <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos, parallel=F, number_of_permutations = 50)
-tulos_var <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0)
-admat <- tulos_var$adjacency_matrix
-diag(admat) <- 0
-plot_adjacency_matrix(adjacentMat(admat),title="HMFGraph")
-
+dev.off()
