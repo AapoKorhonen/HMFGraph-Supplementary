@@ -9,7 +9,7 @@ library(progress)
 
 ###############################
 # Tests run with:
-# CPU: AMD Ryzen 7 PRO 6850U
+# CPU: Intel Core i7-11700F
 # RAM: 32 GB
 ###############################
 
