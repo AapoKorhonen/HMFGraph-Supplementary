@@ -72,6 +72,40 @@ sum(cluster_p_100_n_300_huge_adjacency[,,1])/2
 
 sum(cluster_p_100_n_300_bdgraph_adjacency[,,1])/2
 
+
+#========================
+# HMFGraph, alpha = CC
+#========================
+# setEPS()
+# postscript("HMFGraph_CC_networks.eps", width = 12, height = 3)   
+# 
+# 
+# par(mfrow=c(1,4))
+adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_CC_scale_free_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_CC_scale_free_p100_n300_huge_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+
+adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+load(file="results/huge/results_HMF_Z_CC_cluster_p100_n300_huge_data.RData")
+admat <- results_HMF_Z_CC_cluster_p100_n300_huge_data[,,1] 
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+
+adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data.RData")
+admat <-results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+
+adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+load(file="results/bdgraph/results_HMF_Z_CC_cluster_p100_n300_bdgraph_data.RData")
+admat <- results_HMF_Z_CC_cluster_p100_n300_bdgraph_data[,,1]
+V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+
+
 # dev.off()
 #========================
 # GWISHART
@@ -305,37 +339,37 @@ qgraph::qgraph(admat,title=paste0("beam, ",names[Value]," = ",round(V,round_valu
 
 
 # dev.off()
-#========================
-# HMFGraph, alpha = CC
-#========================
-# setEPS()
-# postscript("HMFGraph_CC_networks.eps", width = 12, height = 3)   
+# #========================
+# # HMFGraph, alpha = CC
+# #========================
+# # setEPS()
+# # postscript("HMFGraph_CC_networks.eps", width = 12, height = 3)   
+# # 
+# # 
+# # par(mfrow=c(1,4))
+# adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
+# load(file="results/huge/results_HMF_Z_CC_scale_free_p100_n300_huge_data.RData")
+# admat <- results_HMF_Z_CC_scale_free_p100_n300_huge_data[,,1]
+# V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+# qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 # 
+# adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
+# load(file="results/huge/results_HMF_Z_CC_cluster_p100_n300_huge_data.RData")
+# admat <- results_HMF_Z_CC_cluster_p100_n300_huge_data[,,1] 
+# V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+# qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 # 
-# par(mfrow=c(1,4))
-adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
-load(file="results/huge/results_HMF_Z_CC_scale_free_p100_n300_huge_data.RData")
-admat <- results_HMF_Z_CC_scale_free_p100_n300_huge_data[,,1]
-V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
-
-adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
-load(file="results/huge/results_HMF_Z_CC_cluster_p100_n300_huge_data.RData")
-admat <- results_HMF_Z_CC_cluster_p100_n300_huge_data[,,1] 
-V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
-
-adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
-load(file="results/bdgraph/results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data.RData")
-admat <-results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data[,,1]
-V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
-
-adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
-load(file="results/bdgraph/results_HMF_Z_CC_cluster_p100_n300_bdgraph_data.RData")
-admat <- results_HMF_Z_CC_cluster_p100_n300_bdgraph_data[,,1]
-V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+# adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
+# load(file="results/bdgraph/results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data.RData")
+# admat <-results_HMF_Z_CC_scale_free_p100_n300_bdgraph_data[,,1]
+# V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+# qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
+# 
+# adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
+# load(file="results/bdgraph/results_HMF_Z_CC_cluster_p100_n300_bdgraph_data.RData")
+# admat <- results_HMF_Z_CC_cluster_p100_n300_bdgraph_data[,,1]
+# V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
+# qgraph::qgraph(admat,title=paste0("HMFGraph, CC, ",names[Value]," = ",round(V,round_value)))
 
 # 
 # # dev.off()

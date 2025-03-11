@@ -56,8 +56,6 @@ pb$tick()
 results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .options.snow = opts) %dopar% {
   set.seed(i)
   
-  
-  
   data_R <-scale_free_p_100_n_35_bdgraph_data[,,i]
   adjacency_correct <- scale_free_p_100_n_35_bdgraph_adjacency[,,i]
   

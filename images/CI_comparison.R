@@ -75,13 +75,13 @@ plot(x, ala_mat1, type = "n", ylim = range(c(ala_mat1, yla_mat1, ala_mat2, yla_m
 for (i in seq_along(x)) {
   segments(x[i], ala_mat2[i], x[i], yla_mat2[i], col = "blue", lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),  col = alpha(col="blue", 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),  col = scales::alpha(col="blue", 0.3) , border = NA)
 
 #Lisätään matriisi 2 (esim. punainen)
 for (i in seq_along(x)) {
   segments(x[i], ala_mat1[i], x[i], yla_mat1[i], col ="red", lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),col = alpha(col="red", 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),col = scales::alpha(col="red", 0.3) , border = NA)
 
 
 # Lisätään MAP pisteet

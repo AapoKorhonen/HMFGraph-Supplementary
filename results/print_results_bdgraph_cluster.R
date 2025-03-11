@@ -24,7 +24,7 @@ source("functions/functions_for_result_handeling.R")
 # 15 = Averace Clustering coefficients (ACC), 
 # 16 = NMI
 
-Values <- c(15,16,4) # MCC, FDR, F1, TPR 
+Values <- c(15,16,4,14) # MCC, FDR, F1, TPR 
 
 round_value1 <- 2  # how many digits will be showed for the Mean 
 round_value2 <- 2  # number of digits for SD

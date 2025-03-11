@@ -31,15 +31,14 @@ for (taxa in tax) {
 #========================
 # alpha = p*10/(p*10+n)
 #========================
+library(HMFGraph)
 
 set.seed(42)
-tulos_10 <- HMFGraph::HMFGraph_GEM(data_R,beta=0.9, alpha =p*10/(p*10+n))
-p*10/(p*10+n)
-# alpha = 0.75
+tulos_10 <- HMFGraph::HMFGraph_GEM(data_R, alpha =p*10/(p*10+n))
+tulos_10$beta
+tulos_10$alpha
 
 permutations_10 <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos_10, parallel=T, number_of_permutations = 50)
-
-
 tulos_var_10 <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p)
 
 setEPS()
@@ -60,7 +59,9 @@ dev.off()
 
 
 set.seed(42)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, beta=0.9)
+tulos <- HMFGraph::HMFGraph_GEM(data_R, epsilon1 = 0.001,epsilon2=0.001)
+tulos_10$beta
+tulos_10$alpha
 
 max(eigen(tulos$omega)$values)/min(eigen(tulos$omega)$values)
 
