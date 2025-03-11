@@ -501,28 +501,28 @@ value <- 4 # F1
 
 par(mfrow=c(2,2))
 
-plot(x=x, y=b095_results_hs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n")
+plot(x=x, y=b095_results_hs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="huge, Scale-free")
 lines(x=x,y=b090_results_hs[,value],col="red")
 lines(x=x,y=b080_results_hs[,value],col="purple")
 lines(x=x,y=b070_results_hs[,value],col="green")
 lines(x=x,y=b060_results_hs[,value],col="brown")
 
 
-plot(x=x, y=b095_results_hC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n")
+plot(x=x, y=b095_results_hC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="huge, Cluster")
 lines(x=x,y=b090_results_hC[,value],col="red")
 lines(x=x,y=b080_results_hC[,value],col="purple")
 lines(x=x,y=b070_results_hC[,value],col="green")
 lines(x=x,y=b060_results_hC[,value],col="brown")
 
 
-plot(x=x, y=b095_results_bs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n")
+plot(x=x, y=b095_results_bs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free")
 lines(x=x,y=b090_results_bs[,value],col="red")
 lines(x=x,y=b080_results_bs[,value],col="purple")
 lines(x=x,y=b070_results_bs[,value],col="green")
 lines(x=x,y=b060_results_bs[,value],col="brown")
 
 
-plot(x=x, y=b095_results_bC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n")
+plot(x=x, y=b095_results_bC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster")
 lines(x=x,y=b090_results_bC[,value],col="red")
 lines(x=x,y=b080_results_bC[,value],col="purple")
 lines(x=x,y=b070_results_bC[,value],col="green")

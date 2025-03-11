@@ -24,6 +24,7 @@ devtools::install_github("AapoKorhonen/HMFGraph")
 
 
 ```r
+install.packages("Matrix")
 install.packages("aricode")
 install.packages("pulsar")
 install.packages("huge")
