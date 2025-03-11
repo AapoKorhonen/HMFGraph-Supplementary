@@ -24,7 +24,7 @@ source("functions/functions_for_result_handeling.R")
 # 15 = Averace Clustering coefficients (ACC), 
 # 16 = NMI
 
-Values <- c(15,16,4) # MCC, FDR, F1, TPR 
+Values <- c(15,16,4) # Averace Clustering coefficients (ACC), NMI, F1
 
 round_value1 <- 2  # how many digits will be showed for the Mean 
 round_value2 <- 2  # number of digits for SD
@@ -73,6 +73,38 @@ results_HMF_P_CC <- list(results_HMF_P_CC_cluster_p100_n35_huge_data,
                          results_HMF_P_CC_cluster_p100_n75_huge_data,
                          results_HMF_P_CC_cluster_p100_n150_huge_data,
                          results_HMF_P_CC_cluster_p100_n300_huge_data)
+
+
+
+load(file="results/huge/results_HMF_Z_cluster_p100_n35_huge_data.RData")
+load(file="results/huge/results_HMF_Z_cluster_p100_n75_huge_data.RData")
+load(file="results/huge/results_HMF_Z_cluster_p100_n150_huge_data.RData")
+load(file="results/huge/results_HMF_Z_cluster_p100_n300_huge_data.RData")
+
+results_HMF_Z <- list(results_HMF_Z_cluster_p100_n35_huge_data,
+                         results_HMF_Z_cluster_p100_n75_huge_data,
+                         results_HMF_Z_cluster_p100_n150_huge_data,
+                         results_HMF_Z_cluster_p100_n300_huge_data)
+
+load(file="results/huge/results_HMF_FDR_cluster_p100_n35_huge_data.RData")
+load(file="results/huge/results_HMF_FDR_cluster_p100_n75_huge_data.RData")
+load(file="results/huge/results_HMF_FDR_cluster_p100_n150_huge_data.RData")
+load(file="results/huge/results_HMF_FDR_cluster_p100_n300_huge_data.RData")
+
+results_HMF_FDR <- list(results_HMF_FDR_cluster_p100_n35_huge_data,
+                           results_HMF_FDR_cluster_p100_n75_huge_data,
+                           results_HMF_FDR_cluster_p100_n150_huge_data,
+                           results_HMF_FDR_cluster_p100_n300_huge_data)
+
+load(file="results/huge/results_HMF_P_cluster_p100_n35_huge_data.RData")
+load(file="results/huge/results_HMF_P_cluster_p100_n75_huge_data.RData")
+load(file="results/huge/results_HMF_P_cluster_p100_n150_huge_data.RData")
+load(file="results/huge/results_HMF_P_cluster_p100_n300_huge_data.RData")
+
+results_HMF_P <- list(results_HMF_P_cluster_p100_n35_huge_data,
+                         results_HMF_P_cluster_p100_n75_huge_data,
+                         results_HMF_P_cluster_p100_n150_huge_data,
+                         results_HMF_P_cluster_p100_n300_huge_data)
 
 
 load(file="results/huge/results_glasso_cluster_p100_n35_huge_data.RData")
@@ -188,6 +220,38 @@ print_results(results_HMF_P_CC,true_files, values = Values, round1=round_value1,
 cat("HMFGraph, FDR = 0.2")
 
 print_results(results_HMF_FDR_CC,true_files, values = Values, round1=round_value1,round2=round_value2)
+
+
+################################################################################
+#===============================================================================
+# HMFGraph, alpha = 10*p/(10*+n)
+#===============================================================================
+################################################################################
+
+cat("HMFGraph, Optimal CI")
+
+print_results(results_HMF_Z,true_files, values = Values, round1=round_value1,round2=round_value2)
+
+################################################################################
+#===============================================================================
+# HMFGraph, CI = 0.90
+#===============================================================================
+################################################################################
+
+cat("HMFGraph, CI = 0.90")
+
+print_results(results_HMF_P,true_files, values = Values, round1=round_value1,round2=round_value2)
+
+################################################################################
+#===============================================================================
+# HMFGraph, FDR = 0.2
+#===============================================================================
+################################################################################
+
+cat("HMFGraph, FDR = 0.2")
+
+print_results(results_HMF_FDR,true_files, values = Values, round1=round_value1,round2=round_value2)
+
 
 ################################################################################
 #===============================================================================

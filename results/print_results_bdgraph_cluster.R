@@ -75,6 +75,38 @@ results_HMF_P_CC <- list(results_HMF_P_CC_cluster_p100_n35_bdgraph_data,
                          results_HMF_P_CC_cluster_p100_n300_bdgraph_data)
 
 
+
+load(file="results/bdgraph/results_HMF_Z_cluster_p100_n35_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_Z_cluster_p100_n75_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_Z_cluster_p100_n150_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_Z_cluster_p100_n300_bdgraph_data.RData")
+
+results_HMF_Z <- list(results_HMF_Z_cluster_p100_n35_bdgraph_data,
+                         results_HMF_Z_cluster_p100_n75_bdgraph_data,
+                         results_HMF_Z_cluster_p100_n150_bdgraph_data,
+                         results_HMF_Z_cluster_p100_n300_bdgraph_data)
+
+load(file="results/bdgraph/results_HMF_FDR_cluster_p100_n35_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_FDR_cluster_p100_n75_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_FDR_cluster_p100_n150_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_FDR_cluster_p100_n300_bdgraph_data.RData")
+
+results_HMF_FDR <- list(results_HMF_FDR_cluster_p100_n35_bdgraph_data,
+                           results_HMF_FDR_cluster_p100_n75_bdgraph_data,
+                           results_HMF_FDR_cluster_p100_n150_bdgraph_data,
+                           results_HMF_FDR_cluster_p100_n300_bdgraph_data)
+
+load(file="results/bdgraph/results_HMF_P_cluster_p100_n35_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_P_cluster_p100_n75_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_P_cluster_p100_n150_bdgraph_data.RData")
+load(file="results/bdgraph/results_HMF_P_cluster_p100_n300_bdgraph_data.RData")
+
+results_HMF_P <- list(results_HMF_P_cluster_p100_n35_bdgraph_data,
+                         results_HMF_P_cluster_p100_n75_bdgraph_data,
+                         results_HMF_P_cluster_p100_n150_bdgraph_data,
+                         results_HMF_P_cluster_p100_n300_bdgraph_data)
+
+
 load(file="results/bdgraph/results_glasso_cluster_p100_n35_bdgraph_data.RData")
 load(file="results/bdgraph/results_glasso_cluster_p100_n75_bdgraph_data.RData")
 load(file="results/bdgraph/results_glasso_cluster_p100_n150_bdgraph_data.RData")
