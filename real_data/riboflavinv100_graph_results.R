@@ -51,9 +51,10 @@ qgraph::qgraph(tulos_var$adjacency_matrix)
 
 
 
-#=====================
-
-
+#==============================================================================================================================
+# Here is a demonstration of how the expected number of connections impact the recovered correlation structure
+# The result doesn't change significantly even with high number of expected connections.
+#==============================================================================================================================
 par(mfrow=c(4,2))
 
 

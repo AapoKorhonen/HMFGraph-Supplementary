@@ -36,4 +36,9 @@ install.packages("parallel")
 install.packages("foreach")
 install.packages("doSNOW")
 install.packages("BGGM")
+install.packages("hdi")
+install.packages("BiocManager")
+BiocManager::install("phyloseq")
+devtools::install_github("zdk123/SpiecEasi")
 ```
+

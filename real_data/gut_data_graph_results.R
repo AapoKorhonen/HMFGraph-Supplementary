@@ -3,7 +3,7 @@
 #========================
 
 library(phyloseq)
-library("SpiecEasi")
+library(SpiecEasi)
 library(huge)
 
 data(amgut2.filt.phy)
@@ -82,3 +82,104 @@ qgraph::qgraph(tulos_var$adjacency_matrix,diag=F,usePCH=T,vsize= 2,
 sum(tulos_var$adjacency_matrix)/2
 
 dev.off()
+
+
+
+
+#==============================================================================================================================
+# Here is a demonstration of how the expected number of connections impact the recovered correlation structure
+# The result doesn't change significantly even with high number of expected connections.
+#==============================================================================================================================
+par(mfrow=c(4,2))
+
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = 0)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = round(p/3,0) )
+qgraph::qgraph(tulos_var$adjacency_matrix)
+round(p/3,0)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = round(p/2,0))
+qgraph::qgraph(tulos_var$adjacency_matrix)
+round(p/2,0)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p*2)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*2
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p*5)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*5
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p*10)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*10
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p*100)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*100
+sum(tulos_var$adjacency_matrix)/2
+
+
+
+
+
+
+#==============================================================================================================================
+# Here is a demonstration of how the expected number of connections impact the recovered correlation structure
+# The result doesn't change significantly even with high number of expected connections.
+#==============================================================================================================================
+par(mfrow=c(4,2))
+
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = 0)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = round(p/3,0) )
+qgraph::qgraph(tulos_var$adjacency_matrix)
+round(p/3,0)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = round(p/2,0))
+qgraph::qgraph(tulos_var$adjacency_matrix)
+round(p/2,0)
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p*2)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*2
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p*5)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*5
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p*10)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*10
+sum(tulos_var$adjacency_matrix)/2
+
+tulos_var <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos,permutations, expected_connections = p*100)
+qgraph::qgraph(tulos_var$adjacency_matrix)
+p*100
+sum(tulos_var$adjacency_matrix)/2
+
