@@ -59,9 +59,9 @@ dev.off()
 
 
 set.seed(42)
-tulos <- HMFGraph::HMFGraph_GEM(data_R, epsilon1 = 0.001,epsilon2=0.001)
-tulos_10$beta
-tulos_10$alpha
+tulos <- HMFGraph::HMFGraph_GEM(data_R)
+tulos$beta
+tulos$alpha
 
 max(eigen(tulos$omega)$values)/min(eigen(tulos$omega)$values)
 
