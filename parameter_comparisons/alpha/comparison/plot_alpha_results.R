@@ -56,10 +56,10 @@ results_HMF_Z_a2_bC <- list(results_HMF_Z2x_cluster_p100_n35_bdgraph_data,
                           results_HMF_Z2x_cluster_p100_n300_bdgraph_data)
 
 
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_cluster_p100_n35_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_cluster_p100_n75_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_cluster_p100_n150_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_cluster_p100_n300_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n35_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n75_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n150_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n300_bdgraph_data.RData")
 
 results_HMF_Z_a090_bC <- list(results_HMF_Z_a090_cluster_p100_n35_bdgraph_data,
                            results_HMF_Z_a090_cluster_p100_n75_bdgraph_data,
@@ -68,10 +68,10 @@ results_HMF_Z_a090_bC <- list(results_HMF_Z_a090_cluster_p100_n35_bdgraph_data,
 
 
 
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_cluster_p100_n35_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_cluster_p100_n75_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_cluster_p100_n150_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_cluster_p100_n300_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n35_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n75_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n150_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n300_bdgraph_data.RData")
 
 results_HMF_Z_a070_bC <- list(results_HMF_Z_a070_cluster_p100_n35_bdgraph_data,
                            results_HMF_Z_a070_cluster_p100_n75_bdgraph_data,
@@ -126,10 +126,10 @@ results_HMF_Z_a2_bs <- list(results_HMF_Z2x_scale_free_p100_n35_bdgraph_data,
                          results_HMF_Z2x_scale_free_p100_n300_bdgraph_data)
 
 
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_scale_free_p100_n35_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_scale_free_p100_n75_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_scale_free_p100_n150_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a090_scale_free_p100_n300_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n35_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n75_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n150_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n300_bdgraph_data.RData")
 
 results_HMF_Z_a090_bs <- list(results_HMF_Z_a090_scale_free_p100_n35_bdgraph_data,
                            results_HMF_Z_a090_scale_free_p100_n75_bdgraph_data,
@@ -138,10 +138,10 @@ results_HMF_Z_a090_bs <- list(results_HMF_Z_a090_scale_free_p100_n35_bdgraph_dat
 
 
 
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_scale_free_p100_n35_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_scale_free_p100_n75_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_scale_free_p100_n150_bdgraph_data.RData")
-load(file="parameter_comparisons/alpha/results/bdgraph/results_HMF_Z_a070_scale_free_p100_n300_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n35_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n75_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n150_bdgraph_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n300_bdgraph_data.RData")
 
 results_HMF_Z_a070_bs <- list(results_HMF_Z_a070_scale_free_p100_n35_bdgraph_data,
                            results_HMF_Z_a070_scale_free_p100_n75_bdgraph_data,
@@ -178,7 +178,7 @@ load(file="results/huge/results_HMF_Z_cluster_p100_n75_huge_data.RData")
 load(file="results/huge/results_HMF_Z_cluster_p100_n150_huge_data.RData")
 load(file="results/huge/results_HMF_Z_cluster_p100_n300_huge_data.RData")
 
-results_HMF_Z_a10_bs <- list(results_HMF_Z_cluster_p100_n35_huge_data,
+results_HMF_Z_a10_hC <- list(results_HMF_Z_cluster_p100_n35_huge_data,
                              results_HMF_Z_cluster_p100_n75_huge_data,
                              results_HMF_Z_cluster_p100_n150_huge_data,
                              results_HMF_Z_cluster_p100_n300_huge_data)
@@ -188,16 +188,16 @@ load(file="results/huge/results_HMF_Z2x_cluster_p100_n75_huge_data.RData")
 load(file="results/huge/results_HMF_Z2x_cluster_p100_n150_huge_data.RData")
 load(file="results/huge/results_HMF_Z2x_cluster_p100_n300_huge_data.RData")
 
-results_HMF_Z_a2_bs <- list(results_HMF_Z2x_cluster_p100_n35_huge_data,
+results_HMF_Z_a2_hC <- list(results_HMF_Z2x_cluster_p100_n35_huge_data,
                             results_HMF_Z2x_cluster_p100_n75_huge_data,
                             results_HMF_Z2x_cluster_p100_n150_huge_data,
                             results_HMF_Z2x_cluster_p100_n300_huge_data)
 
 
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_cluster_p100_n35_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_cluster_p100_n75_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_cluster_p100_n150_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_cluster_p100_n300_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n35_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n75_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n150_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_cluster_p100_n300_huge_data.RData")
 
 results_HMF_Z_a090_hC <- list(results_HMF_Z_a090_cluster_p100_n35_huge_data,
                            results_HMF_Z_a090_cluster_p100_n75_huge_data,
@@ -206,10 +206,10 @@ results_HMF_Z_a090_hC <- list(results_HMF_Z_a090_cluster_p100_n35_huge_data,
 
 
 
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_cluster_p100_n35_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_cluster_p100_n75_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_cluster_p100_n150_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_cluster_p100_n300_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n35_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n75_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n150_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_cluster_p100_n300_huge_data.RData")
 
 results_HMF_Z_a070_hC <- list(results_HMF_Z_a070_cluster_p100_n35_huge_data,
                            results_HMF_Z_a070_cluster_p100_n75_huge_data,
@@ -248,7 +248,7 @@ load(file="results/huge/results_HMF_Z_scale_free_p100_n75_huge_data.RData")
 load(file="results/huge/results_HMF_Z_scale_free_p100_n150_huge_data.RData")
 load(file="results/huge/results_HMF_Z_scale_free_p100_n300_huge_data.RData")
 
-results_HMF_Z_a10_bs <- list(results_HMF_Z_scale_free_p100_n35_huge_data,
+results_HMF_Z_a10_hs <- list(results_HMF_Z_scale_free_p100_n35_huge_data,
                              results_HMF_Z_scale_free_p100_n75_huge_data,
                              results_HMF_Z_scale_free_p100_n150_huge_data,
                              results_HMF_Z_scale_free_p100_n300_huge_data)
@@ -258,17 +258,17 @@ load(file="results/huge/results_HMF_Z2x_scale_free_p100_n75_huge_data.RData")
 load(file="results/huge/results_HMF_Z2x_scale_free_p100_n150_huge_data.RData")
 load(file="results/huge/results_HMF_Z2x_scale_free_p100_n300_huge_data.RData")
 
-results_HMF_Z_a2_bs <- list(results_HMF_Z2x_scale_free_p100_n35_huge_data,
+results_HMF_Z_a2_hs <- list(results_HMF_Z2x_scale_free_p100_n35_huge_data,
                             results_HMF_Z2x_scale_free_p100_n75_huge_data,
                             results_HMF_Z2x_scale_free_p100_n150_huge_data,
                             results_HMF_Z2x_scale_free_p100_n300_huge_data)
 
 
 
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_scale_free_p100_n35_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_scale_free_p100_n75_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_scale_free_p100_n150_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a090_scale_free_p100_n300_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n35_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n75_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n150_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a090_scale_free_p100_n300_huge_data.RData")
 
 results_HMF_Z_a090_hs <- list(results_HMF_Z_a090_scale_free_p100_n35_huge_data,
                            results_HMF_Z_a090_scale_free_p100_n75_huge_data,
@@ -277,10 +277,10 @@ results_HMF_Z_a090_hs <- list(results_HMF_Z_a090_scale_free_p100_n35_huge_data,
 
 
 
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_scale_free_p100_n35_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_scale_free_p100_n75_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_scale_free_p100_n150_huge_data.RData")
-load(file="parameter_comparisons/alpha/results/huge/results_HMF_Z_a070_scale_free_p100_n300_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n35_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n75_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n150_huge_data.RData")
+load(file="parameter_comparisons/alpha/results/results_HMF_Z_a070_scale_free_p100_n300_huge_data.RData")
 
 results_HMF_Z_a070_hs <- list(results_HMF_Z_a070_scale_free_p100_n35_huge_data,
                            results_HMF_Z_a070_scale_free_p100_n75_huge_data,
@@ -304,12 +304,12 @@ a090_results_bC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_a090_b
 
 
 
-b090_results_bC <- matrix(1, ncol=16, nrow=4)
+CC_results_bC <- matrix(1, ncol=16, nrow=4)
 
-b090_results_bC[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[1]],true_files_bC[[1]]))
-b090_results_bC[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[2]],true_files_bC[[2]]))
-b090_results_bC[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[3]],true_files_bC[[3]]))
-b090_results_bC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[4]],true_files_bC[[4]]))
+CC_results_bC[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[1]],true_files_bC[[1]]))
+CC_results_bC[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[2]],true_files_bC[[2]]))
+CC_results_bC[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[3]],true_files_bC[[3]]))
+CC_results_bC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bC[[4]],true_files_bC[[4]]))
 
 
 
@@ -350,12 +350,12 @@ a090_results_bs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_a090_b
 
 
 
-b090_results_bs <- matrix(1, ncol=16, nrow=4)
+CC_results_bs <- matrix(1, ncol=16, nrow=4)
 
-b090_results_bs[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[1]],true_files_bs[[1]]))
-b090_results_bs[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[2]],true_files_bs[[2]]))
-b090_results_bs[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[3]],true_files_bs[[3]]))
-b090_results_bs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[4]],true_files_bs[[4]]))
+CC_results_bs[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[1]],true_files_bs[[1]]))
+CC_results_bs[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[2]],true_files_bs[[2]]))
+CC_results_bs[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[3]],true_files_bs[[3]]))
+CC_results_bs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_bs[[4]],true_files_bs[[4]]))
 
 
 
@@ -396,12 +396,12 @@ a090_results_hC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_a090_h
 
 
 
-b090_results_hC <- matrix(1, ncol=16, nrow=4)
+CC_results_hC <- matrix(1, ncol=16, nrow=4)
 
-b090_results_hC[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[1]],true_files_hC[[1]]))
-b090_results_hC[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[2]],true_files_hC[[2]]))
-b090_results_hC[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[3]],true_files_hC[[3]]))
-b090_results_hC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[4]],true_files_hC[[4]]))
+CC_results_hC[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[1]],true_files_hC[[1]]))
+CC_results_hC[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[2]],true_files_hC[[2]]))
+CC_results_hC[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[3]],true_files_hC[[3]]))
+CC_results_hC[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hC[[4]],true_files_hC[[4]]))
 
 
 
@@ -442,12 +442,12 @@ a090_results_hs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_a090_h
 
 
 
-b090_results_hs <- matrix(1, ncol=16, nrow=4)
+CC_results_hs <- matrix(1, ncol=16, nrow=4)
 
-b090_results_hs[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[1]],true_files_hs[[1]]))
-b090_results_hs[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[2]],true_files_hs[[2]]))
-b090_results_hs[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[3]],true_files_hs[[3]]))
-b090_results_hs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[4]],true_files_hs[[4]]))
+CC_results_hs[1,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[1]],true_files_hs[[1]]))
+CC_results_hs[2,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[2]],true_files_hs[[2]]))
+CC_results_hs[3,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[3]],true_files_hs[[3]]))
+CC_results_hs[4,] <- colMeans(calculate_results_from_file(results_HMF_Z_CC_hs[[4]],true_files_hs[[4]]))
 
 
 
@@ -505,28 +505,28 @@ value <- 4 # F1
 par(mfrow=c(2,2))
 
 plot(x=x, y=a090_results_hs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="huge, Scale-free")
-lines(x=x,y=b090_results_hs[,value],col="red")
+lines(x=x,y=CC_results_hs[,value],col="red")
 lines(x=x,y=a070_results_hs[,value],col="purple")
 lines(x=x,y=a10_results_hs[,value],col="green")
 lines(x=x,y=a2_results_hs[,value],col="brown")
 
 
 plot(x=x, y=a090_results_hC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="huge, Cluster")
-lines(x=x,y=b090_results_hC[,value],col="red")
+lines(x=x,y=CC_results_hC[,value],col="red")
 lines(x=x,y=a070_results_hC[,value],col="purple")
 lines(x=x,y=a10_results_hC[,value],col="green")
 lines(x=x,y=a2_results_hC[,value],col="brown")
 
 
 plot(x=x, y=a090_results_bs[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free")
-lines(x=x,y=b090_results_bs[,value],col="red")
+lines(x=x,y=CC_results_bs[,value],col="red")
 lines(x=x,y=a070_results_bs[,value],col="purple")
 lines(x=x,y=a10_results_bs[,value],col="green")
 lines(x=x,y=a2_results_bs[,value],col="brown")
 
 
 plot(x=x, y=a090_results_bC[,value], type="l", ylim=c(0,1), ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster")
-lines(x=x,y=b090_results_bC[,value],col="red")
+lines(x=x,y=CC_results_bC[,value],col="red")
 lines(x=x,y=a070_results_bC[,value],col="purple")
 lines(x=x,y=a10_results_bC[,value],col="green")
 lines(x=x,y=a2_results_bC[,value],col="brown")
