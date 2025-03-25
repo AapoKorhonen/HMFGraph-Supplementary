@@ -3,7 +3,7 @@
 # CPU: Intel Core i7-11700F
 # RAM: 32 GB
 ###############################
-
+library(microbenchmark)
 
 load(file="time_comparisons/p_100/benchmark_Result100.RData")
 benchmark_Result100
@@ -34,13 +34,13 @@ load(file="time_comparisons/p_300/benchmark_Result300.RData")
 benchmark_Result300
 
 # Unit: seconds
-# expr        min         lq       mean     median         uq        max neval
-# HMFGraph_GEM(graph_data$data, alpha = alpha)   5.667685   5.669779   5.687856   5.698592   5.700008   5.703216     5
-# HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data,      alpha = alpha), number_of_permutations = 50, parallel = T)  38.298518  38.350310  38.445221  38.376594  38.404726  38.795957     5
-# HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data),      number_of_permutations = 50, parallel = T)  68.930847  68.987362  69.085592  69.009823  69.128201  69.371726     5
-# HMFGraph_gibbs_sampler(graph_data$data, alpha = alpha, iters = 5000,      burn_in = 50) 314.083319 314.255153 316.755027 314.308362 319.807600 321.320700     5
-# bdgraph(data = graph_data$data, n = n, verbose = FALSE, iter = 5000,      burnin = 50) 505.906044 506.451402 511.154808 506.655145 507.788975 528.972477     5
-# BGGM::estimate(graph_data$data, type = "continuous", iter = 5000,      ) 307.379667 307.387561 308.188138 307.903413 308.158830 310.111217     5
+#                                                                                                                                                 expr        min         lq       mean     median         uq        max neval
+# HMFGraph_GEM(graph_data$data, alpha = alpha)                                                                                                    5.667685   5.669779   5.687856   5.698592   5.700008   5.703216     5
+# HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data,      alpha = alpha), number_of_permutations = 50, parallel = T)        38.298518  38.350310  38.445221  38.376594  38.404726  38.795957     5
+# HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data),      number_of_permutations = 50, parallel = T)                       68.930847  68.987362  69.085592  69.009823  69.128201  69.371726     5
+# HMFGraph_gibbs_sampler(graph_data$data, alpha = alpha, iters = 5000,      burn_in = 50)                                                         314.083319 314.255153 316.755027 314.308362 319.807600 321.320700     5
+# bdgraph(data = graph_data$data, n = n, verbose = FALSE, iter = 5000,      burnin = 50)                                                          505.906044 506.451402 511.154808 506.655145 507.788975 528.972477     5
+# BGGM::estimate(graph_data$data, type = "continuous", iter = 5000,      )                                                                        307.379667 307.387561 308.188138 307.903413 308.158830 310.111217     5
 
 
 load(file="time_comparisons/p_400/benchmark_Result400.RData")

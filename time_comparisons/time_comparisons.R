@@ -86,7 +86,7 @@ benchmark_Result300 <-microbenchmark( HMFGraph_GEM(graph_data$data, alpha = alph
                 HMFGraph_gibbs_sampler(graph_data$data, alpha = alpha,iters = 5000, burn_in = 50),
                 bdgraph( data =graph_data$data,n=n,verbose = FALSE , iter = 5000, burnin =50),
                 BGGM::estimate(graph_data$data, type = "continuous",
-                               iter = 5000 ,),
+                               iter = 5000),
                 times = 5
 )
 
