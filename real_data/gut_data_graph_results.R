@@ -13,6 +13,7 @@ data_R <- t(otu_data)
 
 #data_norm <- SpiecEasi:::.spiec.easi.norm(data_R) # different normalization
 #data_R <- data_norm
+
 n <- 296
 p <- 138
 dim(data_R)
