@@ -112,7 +112,7 @@ benchmark_Result400 <-microbenchmark( HMFGraph_GEM(graph_data$data, alpha = alph
                 HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data, alpha = alpha), number_of_permutations = 50,parallel = T),
                 HMFGraph_GEM_permutations(graph_data$data, HMFGraph_GEM(graph_data$data), number_of_permutations = 50,parallel = T),
                 HMFGraph_gibbs_sampler(graph_data$data, alpha =  alpha,iters = 5000, burn_in = 50),
-                bdgraph( data =graph_data$data,n=n,verbose = FALSE , iter = 5050, burnin =50),
+                bdgraph( data =graph_data$data,n=n,verbose = FALSE , iter = 5000, burnin =50),
                 BGGM::estimate(graph_data$data, type = "continuous",
                                iter = 5000),
                 times = 5
