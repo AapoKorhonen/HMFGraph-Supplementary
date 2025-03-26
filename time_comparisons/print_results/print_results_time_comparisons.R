@@ -134,23 +134,23 @@ benchmark_Result300_G_wishart
 
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph.RData")
 benchmark_Result400_HMFGraph
-# Unit: milliseconds
-#  median : 299.5302
+# Unit: seconds
+#  median : 14.47126
 
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph_P.RData")
 benchmark_Result400_HMFGraph_P
 # Unit: seconds
-#  median : 3.949834
+#  median : 91.32744
 
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph_P_alpha.RData")
 benchmark_Result400_HMFGraph_P_alpha
 # Unit: seconds
-#  median : 5.314875
+#  median : 159.5696
 
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph_P_alpha_WP.RData")
 benchmark_Result400_HMFGraph_P_alpha_WP
 # Unit: seconds
-#  median : 11.81925
+#  median : 680.3112
 
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph_Gibbs.RData")
 benchmark_Result400_HMFGraph_Gibbs
@@ -165,4 +165,4 @@ benchmark_Result400_BGGM
 load(file="time_comparisons/p_400/benchmark_Result400_G_wishart.RData")
 benchmark_Result400_G_wishart
 # Unit: seconds
-#  median : 16.69958
+#  median : 1736.934
