@@ -155,12 +155,12 @@ benchmark_Result400_HMFGraph_P_alpha_WP
 load(file="time_comparisons/p_400/benchmark_Result400_HMFGraph_Gibbs.RData")
 benchmark_Result400_HMFGraph_Gibbs
 # Unit: seconds
-#  median : 14.37286
+#  median : 730.3058
 
 load(file="time_comparisons/p_400/benchmark_Result400_BGGM.RData")
 benchmark_Result400_BGGM
 # Unit: seconds
-#  median : 12.02836
+#  median : 726.0881
 
 load(file="time_comparisons/p_400/benchmark_Result400_G_wishart.RData")
 benchmark_Result400_G_wishart
