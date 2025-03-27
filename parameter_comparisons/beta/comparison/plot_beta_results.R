@@ -7,6 +7,10 @@
 
 source("functions/functions_for_result_handeling.R")
 
+library(RColorBrewer)
+
+colors <- brewer.pal(5, "Dark2")  
+
 
 #===============================================================================
 # Loading all results
@@ -509,48 +513,48 @@ m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
 layout(mat = m,heights = c(0.1,0.1,0.05))
 
 
-plot(x=x, y=b095_results_hs[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_hs[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="huge, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_hs[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_hs[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_hs[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_hs[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_hs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_hs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_hs[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_hs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_hC[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_hC[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="huge, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_hC[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_hC[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_hC[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_hC[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_hC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_hC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_hC[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_hC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_bs[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_bs[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_bs[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_bs[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_bs[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_bs[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_bs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_bs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_bs[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_bs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_bC[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_bC[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_bC[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_bC[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_bC[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_bC[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_bC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_bC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_bC[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_bC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
 par(mar = c(1, 1, 1, 1))
 plot(1, type = "n", axes=FALSE, xlab="", ylab="")
-plot_colors <- c("black","red", "blue", "green", "purple")
+plot_colors <- c(colors[1],colors[2], colors[3], colors[4], colors[5])
 legend(x = "top",inset = 0,
        legend = c("beta = 0.95", "beta = 0.90", "beta = 0.80","beta = 0.70", "beta = 0.60"), 
-       col=plot_colors, lwd=2, cex=1.2, xpd = TRUE, horiz = TRUE)
+       col=plot_colors, lwd=2, cex=1.2, xpd = TRUE, horiz = TRUE, lty=c(1:5))
 
 
 dev.off()
@@ -568,48 +572,48 @@ m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
 layout(mat = m,heights = c(0.1,0.1,0.05))
 
 
-plot(x=x, y=b095_results_hs[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_hs[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="huge, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_hs[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_hs[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_hs[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_hs[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_hs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_hs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_hs[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_hs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_hC[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_hC[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="huge, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_hC[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_hC[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_hC[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_hC[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_hC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_hC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_hC[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_hC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_bs[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_bs[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_bs[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_bs[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_bs[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_bs[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_bs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_bs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_bs[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_bs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
-plot(x=x, y=b095_results_bC[,value], type="l", ylim=c(0,1), 
+plot(x=x, y=b095_results_bC[,value],col=colors[1], type="l", ylim=c(0,1), 
      ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b090_results_bC[,value],col="red", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b080_results_bC[,value],col="blue", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b070_results_bC[,value],col="green", lwd = 2,cex.lab = 1.2,cex.main=2)
-lines(x=x,y=b060_results_bC[,value],col="purple", lwd = 2,cex.lab = 1.2,cex.main=2)
+lines(x=x,y=b090_results_bC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
+lines(x=x,y=b080_results_bC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
+lines(x=x,y=b070_results_bC[,value],col=colors[4], lwd = 2,cex.lab = 1.2,cex.main=2, lty=4)
+lines(x=x,y=b060_results_bC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.main=2, lty=5)
 
 
 par(mar = c(1, 1, 1, 1))
 plot(1, type = "n", axes=FALSE, xlab="", ylab="")
-plot_colors <- c("black","red", "blue", "green", "purple")
+plot_colors <- c(colors[1],colors[2], colors[3], colors[4], colors[5])
 legend(x = "top",inset = 0,
        legend = c("beta = 0.95", "beta = 0.90", "beta = 0.80","beta = 0.70", "beta = 0.60"), 
-       col=plot_colors, lwd=2, cex=1.2, xpd = TRUE, horiz = TRUE)
+       col=plot_colors, lwd=2, cex=1.2, xpd = TRUE, horiz = TRUE, lty=c(1:5))
 
 
 dev.off()
