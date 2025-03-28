@@ -46,7 +46,7 @@ devtools::install_github("AapoKorhonen/HMFGraph")
 # Guide 
 
 
-All functions require the working directory to be the main directory (where this README lies). The files are designed such that the user does not need to edit any files. All results can be replicated by running each file once found in this repository. The directory "functions" include functions the are used in other files.
+All functions require the working directory to be the main directory (where this README lies). The files are designed such that the user does not need to edit any files. All results can be replicated by running each file once found in this repository. The directory "functions" include functions the are used in other files. All figures are presented in the directory "figures".
 
 
 ## Simulating datasets
@@ -54,10 +54,13 @@ All functions require the working directory to be the main directory (where this
 ## The main results
 
 
+## Comparisons of credibel intervals
+
+Credible interval comparisons and the figures depicting the comparisons are produced with files found from directory "CI_comparisons".
 
 ## FDR control
 
-The file "FDR_control.R" in the directory "FDR_control" produces the results for investigating the FDR control. The results are save to the directory "FDR_control/results". The current results are run with CPU i7-11700f with 32 GB system memory. The results can be view with file "print_results_time_comparisons.R" in the directory "time_comparisons/print_results".
+The file "FDR_control.R" in the directory "FDR_control" produces the results for investigating the FDR control. The results are save to the directory "FDR_control/results". The figure depicting the results can be produced with the r file "FDR_control_plot.R".
 
 ## Computation times
 

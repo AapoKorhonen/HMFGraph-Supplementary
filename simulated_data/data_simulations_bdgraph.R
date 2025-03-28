@@ -13,32 +13,6 @@ t1 = 50
 
 n = 35; p = 100
 
-#=========================================================================
-# Random N = 35, P = 100
-#=========================================================================
-
-random_p_100_n_35_bdgraph_data<- array( 0, dim = c( n ,p , t1 ) )
-random_p_100_n_35_bdgraph_adjacency<- array( 0, dim = c( p ,p , t1 ) )
-
-
-for(i in 1:t1){
-  set.seed(i)
-  graph_data <- bdgraph.sim( n =n, p = p,graph = "random", vis = F, prob = 0.05)
-  
-  random_p_100_n_35_bdgraph_data[,,i] <-graph_data$data
-  
-  graph_data$K <- round(graph_data$K, 5)
-  
-  graph_data$K[abs(graph_data$K) > 0] <- 1
-  
-  diag(graph_data$K) <- 0
-  
-  random_p_100_n_35_bdgraph_adjacency[,,i] <-graph_data$K
-}
-
-save(random_p_100_n_35_bdgraph_data,file = "simulated_data/bdgraph/random_p_100_n_35_bdgraph_data.RData")
-save(random_p_100_n_35_bdgraph_adjacency,file = "simulated_data/bdgraph/random_p_100_n_35_bdgraph_adjacency.RData")
-
 
 #=========================================================================
 # Cluster N = 35, P = 100
@@ -106,33 +80,6 @@ save(scale_free_p_100_n_35_bdgraph_adjacency,file = "simulated_data/bdgraph/scal
 
 
 n = 75; p = 100
-
-#=========================================================================
-# Random N = 75, P = 100
-#=========================================================================
-
-random_p_100_n_75_bdgraph_data<- array( 0, dim = c( n ,p , t1 ) )
-random_p_100_n_75_bdgraph_adjacency<- array( 0, dim = c( p ,p , t1 ) )
-
-
-for(i in 1:t1){
-  set.seed(i)
-  graph_data <- bdgraph.sim( n =n, p = p,graph = "random", vis = F, prob = 0.05)
-  
-  random_p_100_n_75_bdgraph_data[,,i] <-graph_data$data
-  
-  graph_data$K <- round(graph_data$K, 5)
-  
-  graph_data$K[abs(graph_data$K) > 0] <- 1
-  
-  diag(graph_data$K) <- 0
-  
-  random_p_100_n_75_bdgraph_adjacency[,,i] <-graph_data$K
-}
-
-save(random_p_100_n_75_bdgraph_data,file = "simulated_data/bdgraph/random_p_100_n_75_bdgraph_data.RData")
-save(random_p_100_n_75_bdgraph_adjacency,file = "simulated_data/bdgraph/random_p_100_n_75_bdgraph_adjacency.RData")
-
 
 #=========================================================================
 # Cluster N = 75, P = 100
@@ -203,33 +150,6 @@ save(scale_free_p_100_n_75_bdgraph_adjacency,file = "simulated_data/bdgraph/scal
 n = 150; p = 100
 
 #=========================================================================
-# Random N = 150, P = 100
-#=========================================================================
-
-random_p_100_n_150_bdgraph_data<- array( 0, dim = c( n ,p , t1 ) )
-random_p_100_n_150_bdgraph_adjacency<- array( 0, dim = c( p ,p , t1 ) )
-
-
-for(i in 1:t1){
-  set.seed(i)
-  graph_data <- bdgraph.sim( n =n, p = p,graph = "random", vis = F, prob = 0.05)
-  
-  random_p_100_n_150_bdgraph_data[,,i] <-graph_data$data
-  
-  graph_data$K <- round(graph_data$K, 5)
-  
-  graph_data$K[abs(graph_data$K) > 0] <- 1
-  
-  diag(graph_data$K) <- 0
-  
-  random_p_100_n_150_bdgraph_adjacency[,,i] <-graph_data$K
-}
-
-save(random_p_100_n_150_bdgraph_data,file = "simulated_data/bdgraph/random_p_100_n_150_bdgraph_data.RData")
-save(random_p_100_n_150_bdgraph_adjacency,file = "simulated_data/bdgraph/random_p_100_n_150_bdgraph_adjacency.RData")
-
-
-#=========================================================================
 # Cluster N = 150, P = 100
 #=========================================================================
 
@@ -295,33 +215,6 @@ save(scale_free_p_100_n_150_bdgraph_adjacency,file = "simulated_data/bdgraph/sca
 
 
 n = 300; p = 100
-
-#=========================================================================
-# Random N = 300, P = 100
-#=========================================================================
-
-random_p_100_n_300_bdgraph_data<- array( 0, dim = c( n ,p , t1 ) )
-random_p_100_n_300_bdgraph_adjacency<- array( 0, dim = c( p ,p , t1 ) )
-
-
-for(i in 1:t1){
-  set.seed(i)
-  graph_data <- bdgraph.sim( n =n, p = p,graph = "random", vis = F, prob = 0.02)
-  
-  random_p_100_n_300_bdgraph_data[,,i] <-graph_data$data
-  
-  graph_data$K <- round(graph_data$K, 5)
-  
-  graph_data$K[abs(graph_data$K) > 0] <- 1
-  
-  diag(graph_data$K) <- 0
-  
-  random_p_100_n_300_bdgraph_adjacency[,,i] <-graph_data$K
-}
-
-save(random_p_100_n_300_bdgraph_data,file = "simulated_data/bdgraph/random_p_100_n_300_bdgraph_data.RData")
-save(random_p_100_n_300_bdgraph_adjacency,file = "simulated_data/bdgraph/random_p_100_n_300_bdgraph_adjacency.RData")
-
 
 #=========================================================================
 # Cluster N = 300, P = 100
