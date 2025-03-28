@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # HMFGraph-Supplementary
 
-
+All R packages that are required for reproducing the results in the repository:
 ```r
 install.packages("devtools")
 install.packages("Matrix")
