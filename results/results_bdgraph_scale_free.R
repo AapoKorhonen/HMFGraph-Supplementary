@@ -75,9 +75,9 @@ results_glasso <- foreach(i = 1:t1, .combine = 'cbind',.packages=c("pulsar", "hu
   
   lmax <- pulsar::getMaxCov(cov(data_R))
   lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-  bdgraphargs <- list(lambda=lams, verbose=FALSE, method="glasso")
+  hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
   
-  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=bdgraphargs, rep.num=20,
+  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
                              criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
   
   fit.p    <- pulsar::refit(out.p)
@@ -684,9 +684,9 @@ results_glasso <- foreach(i = 1:t1, .combine = 'cbind',.packages=c("pulsar", "hu
   
   lmax <- pulsar::getMaxCov(cov(data_R))
   lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-  bdgraphargs <- list(lambda=lams, verbose=FALSE, method="glasso")
+  hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
   
-  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=bdgraphargs, rep.num=20,
+  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
                              criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
   
   fit.p    <- pulsar::refit(out.p)
@@ -1296,10 +1296,10 @@ results_glasso <- foreach(i = 1:t1, .combine = 'cbind',.packages=c("pulsar", "hu
   
   lmax <- pulsar::getMaxCov(cov(data_R))
   lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-  bdgraphargs <- list(lambda=lams, verbose=FALSE, method="glasso")
+  hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
   
   
-  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=bdgraphargs, rep.num=20,
+  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
                              criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
   
   fit.p    <- pulsar::refit(out.p)
@@ -1910,9 +1910,9 @@ results_glasso <- foreach(i = 1:t1, .combine = 'cbind',.packages=c("pulsar", "hu
   
   lmax <- pulsar::getMaxCov(cov(data_R))
   lams <- pulsar::getLamPath(lmax, lmax*.05, len=40)
-  bdgraphargs <- list(lambda=lams, verbose=FALSE, method="glasso")
+  hugeargs <- list(lambda=lams, verbose=FALSE, method="glasso")
   
-  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=bdgraphargs, rep.num=20,
+  out.p    <- pulsar::pulsar(data_R, fun=huge, fargs=hugeargs, rep.num=20,
                              criterion='stars', lb.stars=TRUE, ub.stars=TRUE)
   
   fit.p    <- pulsar::refit(out.p)

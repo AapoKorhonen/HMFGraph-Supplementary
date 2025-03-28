@@ -6,6 +6,8 @@
 library(huge)
 library(HMFGraph)
 
+colors <- brewer.pal(2, "Dark2")  
+colors <- c("blue","red") 
 set.seed(42)
 n <-100
 p <-20
@@ -73,24 +75,24 @@ plot(x, ala_mat1, type = "n", ylim = range(c(ala_mat1, yla_mat1, ala_mat2, yla_m
 #Lisätään matriisi 1 (esim. sininen)
 
 for (i in seq_along(x)) {
-  segments(x[i], ala_mat2[i], x[i], yla_mat2[i], col = "blue", lwd = 1.5)
+  segments(x[i], ala_mat2[i], x[i], yla_mat2[i], col = colors[1], lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),  col = scales::alpha(col="blue", 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),  col = scales::alpha(col=colors[1], 0.3) , border = NA)
 
 #Lisätään matriisi 2 (esim. punainen)
 for (i in seq_along(x)) {
-  segments(x[i], ala_mat1[i], x[i], yla_mat1[i], col ="red", lwd = 1.5)
+  segments(x[i], ala_mat1[i], x[i], yla_mat1[i], col =colors[2], lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),col = scales::alpha(col="red", 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),col = scales::alpha(col=colors[2], 0.3) , border = NA)
 
 
 # Lisätään MAP pisteet
-points(x, map1, col = "blue", pch = 16, cex=0.7)  # Siniset pisteet matriisi 1:lle
-points(x, map2, col ="red", pch = 16, cex=0.7)   # Punaiset pisteet matriisi 2:lle
+points(x, map1, col = colors[1], pch = 16, cex=0.7)  # Siniset pisteet matriisi 1:lle
+points(x, map2, col =colors[2], pch = 16, cex=0.7)   # Punaiset pisteet matriisi 2:lle
 
 # Selite
 legend("bottomright", legend = c("Gibbs sampler", "GEM algorithm"),
-       col = c("blue","red"),
+       col = c(colors[1],colors[2]),
        pch = c(16, 15),
        lty = c(1, 1),
        lwd = c(2, 2),
