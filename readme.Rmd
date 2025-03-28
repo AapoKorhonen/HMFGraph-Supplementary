@@ -16,14 +16,8 @@ knitr::opts_chunk$set(
 # HMFGraph-Supplementary
 
 
-
-``` r
-# install.packages("devtools")
-devtools::install_github("AapoKorhonen/HMFGraph")
-```
-
-
 ```r
+install.packages("devtools")
 install.packages("Matrix")
 install.packages("aricode")
 install.packages("pulsar")
@@ -35,10 +29,38 @@ install.packages("microbenchmark")
 install.packages("parallel")
 install.packages("foreach")
 install.packages("doSNOW")
+install.packages("progress")
 install.packages("BGGM")
 install.packages("hdi")
+install.packages("flare")
+install.packages("rags2ridges")
 install.packages("BiocManager")
+install.packages("RColorBrewer")
 BiocManager::install("phyloseq")
 devtools::install_github("zdk123/SpiecEasi")
+devtools::install_github("gleday/beam")
+devtools::install_github("apatrone2/thav.glasso")
+devtools::install_github("AapoKorhonen/HMFGraph")
 ```
+
+# Guide 
+
+
+All functions require the working directory to be the main directory (where this README lies). The files are designed such that the user does not need to edit any files. All results can be replicated by running each file once found in this repository. The directory "functions" include functions the are used in other files.
+
+
+## Simulating datasets
+
+## The main results
+
+
+
+## FDR control
+
+The file "FDR_control.R" in the directory "FDR_control" produces the results for investigating the FDR control. The results are save to the directory "FDR_control/results". The current results are run with CPU i7-11700f with 32 GB system memory. The results can be view with file "print_results_time_comparisons.R" in the directory "time_comparisons/print_results".
+
+## Computation times
+
+All R-files in the directory "time_comparisons" have to be run. The results are save to directories "p_100", "p_200", "p_300" and "p_400". The current results are run with CPU i7-11700f with 32 GB system memory. The results can be view with file "print_results_time_comparisons.R" in the directory "time_comparisons/print_results".
+
 

@@ -1631,7 +1631,7 @@ results_G_wishart <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('BDgraph')
   
   admat <- bdgraph.obj$p_links
   
-  admat[admat >= 0.5] <- 1
+  admat[admat >= 0.5] <- 1 
   
   admat[admat < 0.5] <- 0
   
