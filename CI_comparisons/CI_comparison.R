@@ -27,7 +27,7 @@ results_gibbs_map$upper_CI
 
 results_gibbs_map$median
 
-results_GEM <- HMFGraph::HMFGraph_GEM(data_R, alpha=alpha, stop_criterion = 0)
+results_GEM <- HMFGraph::HMFGraph_GEM(data_R, alpha=alpha)
 
 results_GEM_map <-HMFGraph::HMFGraph_GEM_CI(results_GEM, CI=0.90)
 

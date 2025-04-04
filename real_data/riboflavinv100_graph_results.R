@@ -19,7 +19,6 @@ data_R <- huge::huge.npn(data_R)
 n <- dim(data_R)[1]
 p <- dim(data_R)[2]
 
-
 #========================
 # alpha = CC
 #========================
