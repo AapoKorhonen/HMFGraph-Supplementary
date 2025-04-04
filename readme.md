@@ -46,11 +46,11 @@ in the directory “figures”.
 
 The results with riboflavin dataset can be found in the file
 “real_data/ribloflavinv100_graph_results.R”. If you run the whole file,
-it will save the plot as a esp-file (Figure 1).
+it will save the plot as a eps-file (Figure 1).
 
 The results with the gut dataset can be found in the file
 “real_data/gut_data_graph_results.R”. If you run the whole file, it will
-save the plot as a esp-file (Figure 2).
+save the plot as a eps-file (Figure 2).
 
 ## Simulating datasets
 
@@ -101,7 +101,7 @@ produced with the r file “FDR_control_plot.R”. (Figures S8)
 ## Network comparisons
 
 Run all R files in directory “network_comparisons”. The files will save
-the plots as esp-files. (Figures S9, S10, S11 and S12)
+the plots as eps-files. (Figures S9, S10, S11 and S12)
 
 ## Computation times
 

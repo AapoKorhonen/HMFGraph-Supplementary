@@ -50,9 +50,9 @@ All functions require the working directory to be the main directory (where this
 
 ## The real datasets
 
-The results with riboflavin dataset can be found in the file "real_data/ribloflavinv100_graph_results.R". If you run the whole file, it will save the plot as a esp-file (Figure 1).
+The results with riboflavin dataset can be found in the file "real_data/ribloflavinv100_graph_results.R". If you run the whole file, it will save the plot as a eps-file (Figure 1).
 
-The results with the gut dataset can be found in the file "real_data/gut_data_graph_results.R". If you run the whole file, it will save the plot as a esp-file (Figure 2).
+The results with the gut dataset can be found in the file "real_data/gut_data_graph_results.R". If you run the whole file, it will save the plot as a eps-file (Figure 2).
 
 ## Simulating datasets
 
@@ -85,7 +85,7 @@ The file "FDR_control.R" in the directory "FDR_control" produces the results for
 
 ## Network comparisons
 
-Run all R files in directory "network_comparisons". The files will save the plots as esp-files. (Figures S9, S10, S11 and S12)
+Run all R files in directory "network_comparisons". The files will save the plots as eps-files. (Figures S9, S10, S11 and S12)
 
 
 ## Computation times
