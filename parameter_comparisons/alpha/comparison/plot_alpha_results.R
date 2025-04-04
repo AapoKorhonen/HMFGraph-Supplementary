@@ -516,7 +516,7 @@ layout(mat = m,heights = c(0.1,0.1,0.05))
 
 
 plot(x=x, y=CC_results_hs[,value],col = colors[1] ,type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="huge, Scale-free"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="huge, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_hs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_hs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -525,7 +525,7 @@ lines(x=x,y=a090_results_hs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_hC[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="huge, Cluster"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="huge, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_hC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_hC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -534,7 +534,7 @@ lines(x=x,y=a090_results_hC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_bs[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="Bdgraph, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_bs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_bs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -543,7 +543,7 @@ lines(x=x,y=a090_results_bs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_bC[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="Bdgraph, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_bC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_bC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -576,7 +576,7 @@ layout(mat = m,heights = c(0.1,0.1,0.05))
 
 
 plot(x=x, y=CC_results_hs[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="huge, Scale-free"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="huge, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_hs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_hs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -585,7 +585,7 @@ lines(x=x,y=a090_results_hs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_hC[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="huge, Cluster"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="huge, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_hC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_hC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -594,7 +594,7 @@ lines(x=x,y=a090_results_hC[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_bs[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="Bdgraph, Scale-free"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="Bdgraph, Scale-free"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_bs[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_bs[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)
@@ -603,7 +603,7 @@ lines(x=x,y=a090_results_bs[,value],col=colors[5], lwd = 2,cex.lab = 1.2,cex.mai
 
 
 plot(x=x, y=CC_results_bC[,value],col = colors[1], type="l", ylim=c(0,1), 
-     ylab = paste0(names[value]), xlab="n", main="Bdgraph, Cluster"
+     ylab = paste0(names[value]), xlab="sample size (n)", main="Bdgraph, Cluster"
      , lwd = 2,cex.lab = 1.2,cex.main=2, lty=1)
 lines(x=x,y=a10_results_bC[,value],col=colors[2], lwd = 2,cex.lab = 1.2,cex.main=2, lty=2)
 lines(x=x,y=a2_results_bC[,value],col=colors[3], lwd = 2,cex.lab = 1.2,cex.main=2, lty=3)

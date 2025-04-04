@@ -51,6 +51,8 @@ All functions require the working directory to be the main directory (where this
 
 ## Simulating datasets
 
+Simulated datasets are generated with R packages huge and BDgraph.
+
 ## The main results
 
 

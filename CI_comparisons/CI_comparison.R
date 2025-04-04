@@ -27,7 +27,7 @@ results_gibbs_map$upper_CI
 
 results_gibbs_map$median
 
-results_GEM <- HMFGraph::HMFGraph_GEM(data_R, alpha=alpha)
+results_GEM <- HMFGraph::HMFGraph_GEM(data_R, alpha=alpha, stop_criterion = 0)
 
 results_GEM_map <-HMFGraph::HMFGraph_GEM_CI(results_GEM, CI=0.90)
 
@@ -62,7 +62,7 @@ map2 <- map2[order_map]
 
 
 x <- seq_along(ala_mat1)
-par(mfrow=c(1,1))
+par(mfrow=c(1,1),mgp=c(2,1,0))
 setEPS()
 cairo_ps("CI_GEM_GIBBS_CI.eps", width = 20, height = 10, fallback_resolution = 1000)   
 
@@ -73,18 +73,18 @@ plot(x, ala_mat1, type = "n", ylim = range(c(ala_mat1, yla_mat1, ala_mat2, yla_m
 
 
 for (i in seq_along(x)) {
-  segments(x[i], ala_mat2[i], x[i], yla_mat2[i], col = colors[1], lwd = 1.5)
+  segments(x[i], ala_mat1[i], x[i], yla_mat1[i], col = colors[1], lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),  col = scales::alpha(col=colors[1], 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),  col = scales::alpha(col=colors[1], 0.3) , border = NA)
 
 for (i in seq_along(x)) {
-  segments(x[i], ala_mat1[i], x[i], yla_mat1[i], col =colors[2], lwd = 1.5)
+  segments(x[i], ala_mat2[i], x[i], yla_mat2[i], col =colors[2], lwd = 1.5)
 }
-polygon(c(x, rev(x)), c(ala_mat1, rev(yla_mat1)),col = scales::alpha(col=colors[2], 0.3) , border = NA)
+polygon(c(x, rev(x)), c(ala_mat2, rev(yla_mat2)),col = scales::alpha(col=colors[2], 0.3) , border = NA)
 
 
 points(x, map1, col = colors[1], pch = 16, cex=0.7)  
-points(x, map2, col =colors[2], pch = 16, cex=0.7)   
+points(x, map2, col = colors[2], pch = 16, cex=0.7)   
 
 legend("bottomright", legend = c("Gibbs sampler", "GEM algorithm"),
        col = c(colors[1],colors[2]),

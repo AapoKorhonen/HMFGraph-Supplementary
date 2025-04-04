@@ -50,7 +50,7 @@ par(pty="s")
 plot(x=target_FDRs,y=colMeans(t(results_FDR_CC_hsc)) , 
      type = "l", main ="huge, scale-free", 
      xlim=c(0,1),ylim=c(0,1), lwd = 2, col = colors[1],
-     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2)
+     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2,cex.axis=1.5)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_10x_hsc)), col=colors[2], lwd = 2,cex.lab = 1.2, lty=2)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_2x_hsc)), col=colors[3], lwd = 2,cex.lab = 1.2, lty=3)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_070_hsc)), col=colors[4], lwd = 2,cex.lab = 1.2, lty=4)
@@ -61,7 +61,7 @@ par(pty="s")
 plot(x=target_FDRs,y=colMeans(t(results_FDR_CC_hC)) ,
      type = "l", main ="huge, cluster", 
      xlim=c(0,1),ylim=c(0,1), lwd = 2, col = colors[1],
-     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2)
+     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2,cex.axis=1.5)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_10x_hC)), col=colors[2], lwd = 2,cex.lab = 1.2, lty=2)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_2x_hC)), col=colors[3], lwd = 2,cex.lab = 1.2, lty=3)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_070_hC)), col=colors[4], lwd = 2,cex.lab = 1.2, lty=4)
@@ -72,8 +72,8 @@ par(pty="s")
 plot(x=target_FDRs,y=colMeans(t(results_FDR_CC_bsc)) ,
      type = "l", main ="Bdgraph, scale-free", 
      xlim=c(0,1),ylim=c(0,1), lwd = 2, col = colors[1],
-     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2)
-lines(x=target_FDRs,y=colMeans(t(results_FDR_10x_bsc)), col=colors[2], lwd = 2,cex.lab = 1.2, lty=2)
+     xlab="Target FDR", ylab = "Real FDR",cex.lab = 1.2,cex.main=2,cex.axis=1.5)
+lines(x=target_FDRs,y=colMeans(t(results_FDR_10x_bsc)), col=colors[2], lwd = 2,cex.lab = 1.2, lty=2,)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_2x_bsc)), col=colors[3], lwd = 2,cex.lab = 1.2, lty=3)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_070_bsc)), col=colors[4], lwd = 2,cex.lab = 1.2, lty=4)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_090_bsc)), col=colors[5], lwd = 2,cex.lab = 1.2, lty=5)
@@ -83,7 +83,7 @@ par(pty="s")
 plot(x=target_FDRs,y=colMeans(t(results_FDR_CC_bC)) ,
      type = "l", main ="Bdgraph, cluster", 
      xlim=c(0,1),ylim=c(0,1), lwd = 2, col = colors[1],
-     xlab="Target FDR", ylab = "Real FDR", cex.lab = 1.2,cex.main=2)
+     xlab="Target FDR", ylab = "Real FDR", cex.lab = 1.2,cex.main=2,cex.axis=1.5)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_10x_bC)), col=colors[2], lwd = 2,cex.lab = 1.2, lty=2)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_2x_bC)), col=colors[3], lwd = 2,cex.lab = 1.2, lty=3)
 lines(x=target_FDRs,y=colMeans(t(results_FDR_070_bC)), col=colors[4], lwd = 2,cex.lab = 1.2, lty=4)
