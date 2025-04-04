@@ -101,7 +101,7 @@ produced with the r file “FDR_control_plot.R”. (Figures S8)
 ## Network comparisons
 
 Run all R files in directory “network_comparisons”. The files will save
-the plot as esp-files. (Figures S9, S10, S11 and S12)
+the plots as esp-files. (Figures S9, S10, S11 and S12)
 
 ## Computation times
 

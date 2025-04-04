@@ -85,7 +85,7 @@ The file "FDR_control.R" in the directory "FDR_control" produces the results for
 
 ## Network comparisons
 
-Run all R files in directory "network_comparisons". The files will save the plot as esp-files. (Figures S9, S10, S11 and S12)
+Run all R files in directory "network_comparisons". The files will save the plots as esp-files. (Figures S9, S10, S11 and S12)
 
 
 ## Computation times
