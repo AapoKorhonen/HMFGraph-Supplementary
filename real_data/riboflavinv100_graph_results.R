@@ -39,9 +39,9 @@ setEPS()
 postscript("riboflavinv100_network.eps", width = 10, height = 10)  
 
 
-qgraph::qgraph(tulos_var$adjacency_matrix, label.cex=1.7)
+qgraph::qgraph(tulos_var$adjacency_matrix, label.cex=1.7,vsize= 2.3)
 
-
+?qgraph::qgraph
 dev.off()
 
 
