@@ -46,11 +46,11 @@ in the directory “figures”.
 
 The results with riboflavin dataset can be found in the file
 “real_data/ribloflavinv100_graph_results.R”. If you run the whole file,
-it will save the plot as a eps-file (Figure 1).
+it will save the plot as a eps-file (Figure 4).
 
 The results with the gut dataset can be found in the file
 “real_data/gut_data_graph_results.R”. If you run the whole file, it will
-save the plot as a eps-file (Figure 2).
+save the plot as a eps-file (Figure 5).
 
 ## Simulating datasets
 
@@ -89,19 +89,19 @@ results with R file “selected_alpha_plot.R” in the directory
 
 Credible interval comparisons and the figures depicting the comparisons
 are produced with files found from directory “CI_comparisons”. (Figures
-S6 and S7)
+1 and 2)
 
 ## FDR control
 
 The file “FDR_control.R” in the directory “FDR_control” produces the
 results for investigating the FDR control. The results are save to the
 directory “FDR_control/results”. The figure depicting the results can be
-produced with the r file “FDR_control_plot.R”. (Figures S8)
+produced with the r file “FDR_control_plot.R”. (Figures 3)
 
 ## Network comparisons
 
 Run all R files in directory “network_comparisons”. The files will save
-the plots as eps-files. (Figures S9, S10, S11 and S12)
+the plots as eps-files. (Figures S6, S7, S8 and S9)
 
 ## Computation times
 
