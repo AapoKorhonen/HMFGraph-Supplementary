@@ -284,25 +284,25 @@ adjacency_correct <- scale_free_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_d_scale_free_p100_n300_huge_data.RData")
 admat <- results_clevel_d_scale_free_p100_n300_huge_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
+qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel (target FDR = 0.05), ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_huge_adjacency[,,1]
 load(file="results/huge/results_clevel_d_cluster_p100_n300_huge_data.RData")
 admat <- results_clevel_d_cluster_p100_n300_huge_data[,,1] 
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
+qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel (target FDR = 0.05), ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- scale_free_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_clevel_d_scale_free_p100_n300_bdgraph_data.RData")
 admat <-results_clevel_d_scale_free_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
+qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel (target FDR = 0.05), ",names[Value]," = ",round(V,round_value)))
 
 adjacency_correct <- cluster_p_100_n_300_bdgraph_adjacency[,,1]
 load(file="results/bdgraph/results_clevel_d_cluster_p100_n300_bdgraph_data.RData")
 admat <- results_clevel_d_cluster_p100_n300_bdgraph_data[,,1]
 V <- calculate_scores(tarkkuus(adjacency_correct, admat))[Value]
-qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel, ",names[Value]," = ",round(V,round_value)))
+qgraph::qgraph(labels=FALSE,admat,title=paste0("clevel (target FDR = 0.05), ",names[Value]," = ",round(V,round_value)))
 
 # dev.off()
 #========================
