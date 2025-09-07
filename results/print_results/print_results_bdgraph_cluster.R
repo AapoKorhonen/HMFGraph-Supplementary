@@ -181,6 +181,11 @@ results_TIGER <- list(results_TIGER_cluster_p100_n35_bdgraph_data,
                       results_TIGER_cluster_p100_n300_bdgraph_data)
 
 
+load(file="results/bdgraph/results_BGGM_cluster_p100_n150_bdgraph_data.RData")
+load(file="results/bdgraph/results_BGGM_cluster_p100_n300_bdgraph_data.RData")
+
+results_BGGM <- list(results_BGGM_cluster_p100_n150_bdgraph_data,
+                      results_BGGM_cluster_p100_n300_bdgraph_data)
 
 
 ################################################################################
@@ -327,6 +332,16 @@ cat("TIGER")
 
 print_results(results_TIGER,true_files, values = Values, round1=round_value1,round2=round_value2)
 
+################################################################################
+#===============================================================================
+# BGGM
+#===============================================================================
+################################################################################
+
+cat("BGGM")
+
+# n =35 is actually n = 150, and n=75 is n=300, ignore the error message
+print_results(results_BGGM,true_files, values = Values, round1=round_value1,round2=round_value2)
 
 
 

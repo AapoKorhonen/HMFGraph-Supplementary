@@ -180,7 +180,11 @@ results_TIGER <- list(results_TIGER_cluster_p100_n35_huge_data,
                       results_TIGER_cluster_p100_n150_huge_data,
                       results_TIGER_cluster_p100_n300_huge_data)
 
+load(file="results/huge/results_BGGM_cluster_p100_n150_huge_data.RData")
+load(file="results/huge/results_BGGM_cluster_p100_n300_huge_data.RData")
 
+results_BGGM <- list(results_BGGM_cluster_p100_n150_huge_data,
+                      results_BGGM_cluster_p100_n300_huge_data)
 
 
 ################################################################################
@@ -324,6 +328,17 @@ print_results(results_THAV,true_files, values = Values, round1=round_value1,roun
 cat("TIGER")
 
 print_results(results_TIGER,true_files, values = Values, round1=round_value1,round2=round_value2)
+
+################################################################################
+#===============================================================================
+# BGGM
+#===============================================================================
+################################################################################
+
+cat("BGGM")
+
+# n =35 is actually n = 150, and n=75 is n=300, ignore the error message
+print_results(results_BGGM,true_files, values = Values, round1=round_value1,round2=round_value2)
 
 
 
