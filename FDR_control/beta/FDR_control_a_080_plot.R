@@ -38,7 +38,7 @@ load(file="FDR_control/beta/results/results_FDR_a_080_b_070_bC.RData")
 load(file="FDR_control/beta/results/results_FDR_a_080_b_060_bC.RData")
 
 setEPS()
-postscript("fdr_control_beta_a_080.eps", width = 12, height = 14)   
+postscript("FigS8.eps", width = 12, height = 14)   
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
