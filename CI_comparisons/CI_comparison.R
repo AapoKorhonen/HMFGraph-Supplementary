@@ -64,7 +64,7 @@ map2 <- map2[order_map]
 x <- seq_along(ala_mat1)
 par(mfrow=c(1,1),mgp=c(2,1,0))
 setEPS()
-cairo_ps("CI_GEM_GIBBS_CI.eps", width = 20, height = 10, fallback_resolution = 1000)   
+cairo_ps("Fig3.eps", width = 20, height = 10, fallback_resolution = 1000)   
 
 
 plot(x, ala_mat1, type = "n", ylim = range(c(ala_mat1, yla_mat1, ala_mat2, yla_mat2)), 

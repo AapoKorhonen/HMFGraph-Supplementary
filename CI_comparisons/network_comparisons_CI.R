@@ -36,7 +36,7 @@ end_time <- Sys.time(); end_time - start_time
 #====================================
 
 setEPS()
-postscript("CI_GEM_GIBBS_network.eps", width = 5, height = 15)   # koko oletuksena tuumina
+postscript("Fig4.eps", width = 5, height = 15)   # koko oletuksena tuumina
 
 #par(mfrow=c(1,1))
 layout(matrix(c(1,1,1,1,2,3,4,5,6,7,8,9),6,2,byrow=TRUE))
