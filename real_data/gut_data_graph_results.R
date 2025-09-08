@@ -51,7 +51,7 @@ permutations_10 <- HMFGraph::HMFGraph_GEM_permutations(data_R, tulos_10, paralle
 tulos_var_10 <- HMFGraph::HMFGraph_GEM_optimal_CI(tulos_10,permutations_10, expected_connections = p)
 
 setEPS()
-postscript("gut_data_both_1.eps", width = 20, height = 12)  
+postscript("Fig7.eps", width = 20, height = 12)  
 
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
@@ -105,7 +105,7 @@ for (taxa in tax) {
 
 
 setEPS()
-postscript("gut_data_both_2.eps", width = 25, height = 12)  
+postscript("FigS16.eps", width = 25, height = 12)  
 
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
@@ -163,7 +163,7 @@ for (taxa in tax) {
 
 
 setEPS()
-postscript("gut_data_both_3.eps", width = 20, height = 12)  
+postscript("FigS17.eps", width = 20, height = 12)  
 
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
