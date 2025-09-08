@@ -25,7 +25,7 @@ real_admat[abs(real_admat) > 0] <- 1
 #====================================
 
 setEPS()
-postscript("beta_values_CI09_network.eps", width = 5, height = 15)   # koko oletuksena tuumina
+postscript("FigS7.eps", width = 5, height = 15)   # koko oletuksena tuumina
 
 #par(mfrow=c(1,1))
 layout(matrix(c(1,2,3,4,5,6,7,8,9,10),5,2,byrow=TRUE))

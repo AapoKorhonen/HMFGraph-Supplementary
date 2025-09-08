@@ -25,7 +25,7 @@ colors <- brewer.pal(5, "Dark2")
 #====================================
 
 setEPS()
-postscript("beta_values_cc_offdiagonals.eps", width = 10, height = 11)   # koko oletuksena tuumina
+postscript("FigS6.eps", width = 10, height = 11)   # koko oletuksena tuumina
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,1,1,1,2,2),nrow = 3,ncol = 2,byrow = TRUE)
