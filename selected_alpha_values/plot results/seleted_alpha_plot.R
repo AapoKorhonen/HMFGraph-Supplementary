@@ -66,7 +66,7 @@ alpha_p10 <- 10*p/(10*p+n)
 alpha_p2 <- 2*p/(2*p+n)
 
 setEPS()
-postscript("selected_alpha_values.eps", width = 12, height = 14)   
+postscript("FigS5.eps", width = 12, height = 14)   
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
