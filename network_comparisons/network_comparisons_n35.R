@@ -52,7 +52,7 @@ load(file = "simulated_data/bdgraph/cluster_p_100_n_35_bdgraph_data.RData")
 load(file = "simulated_data/bdgraph/cluster_p_100_n_35_bdgraph_adjacency.RData")
 
 setEPS()
-postscript("all_networks_n35.eps", width = 12, height = 3*8)   
+postscript("FigS13.eps", width = 12, height = 3*8)   
 
 
 par(mfrow=c(8,4))
