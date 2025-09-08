@@ -140,7 +140,7 @@ label_color <- rep("black", 101)
 label_color[c(32,89,97)] <- "white"
 
 setEPS()
-postscript("Figs14.eps", width = 25, height = 50)  
+postscript("FigS14.eps", width = 25, height = 50)  
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,2,3,4,5,6,7,8,9,9,10,10),nrow = 6,ncol =2,byrow = TRUE)
 layout(mat = m,heights = c(0.5,0.5,0.5,0.5,0.1,0.15))

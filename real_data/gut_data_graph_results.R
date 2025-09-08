@@ -105,7 +105,7 @@ for (taxa in tax) {
 
 
 setEPS()
-postscript("FigS16.eps", width = 25, height = 12)  
+postscript("FigS15.eps", width = 25, height = 12)  
 
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
@@ -163,7 +163,7 @@ for (taxa in tax) {
 
 
 setEPS()
-postscript("FigS17.eps", width = 20, height = 12)  
+postscript("FigS16.eps", width = 20, height = 12)  
 
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
