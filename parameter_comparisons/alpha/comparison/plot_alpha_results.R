@@ -508,7 +508,7 @@ value <- 4 # F1
 
 
 setEPS()
-postscript("alpha_results.eps", width = 12, height = 15)   
+postscript("FigS3.eps", width = 12, height = 15)   
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
@@ -568,7 +568,7 @@ value <- 14 # FDR
 
 
 setEPS()
-postscript("alpha_results_fdr.eps", width = 12, height = 15)   
+postscript("FigS4.eps", width = 12, height = 15)   
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
