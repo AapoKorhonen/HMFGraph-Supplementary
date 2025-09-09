@@ -93,10 +93,15 @@ are produced with files found from directory “CI_comparisons”. (Figures
 
 ## FDR control
 
+### alpha:
 The file “FDR_control.R” in the directory “FDR_control” produces the
 results for investigating the FDR control. The results are save to the
 directory “FDR_control/results”. The figure depicting the results can be
-produced with the r file “FDR_control_plot.R”. (Figures 3)
+produced with the r file “FDR_control_plot.R”. (Figure 5)
+
+### beta:
+Run all files "FDR_control_beta_CC.R" and "FDR_control_beta_080.R" directory in “FDR_control/beta”. The results can be plotted with files "FDR_control_beta_CC_plot.R" (FigS9) and "FDR_control_a_080_plot.R" (FigS8)
+
 
 ## Network comparisons
 
