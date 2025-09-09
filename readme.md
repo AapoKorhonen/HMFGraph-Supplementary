@@ -46,11 +46,11 @@ in the directory “figures”.
 
 The results with riboflavin dataset can be found in the file
 “real_data/ribloflavinv100_graph_results.R”. If you run the whole file,
-it will save the plot as a eps-file (Figure 4).
+it will save the plot as a eps-file (Figure 5 and Supporting information S14).
 
 The results with the gut dataset can be found in the file
 “real_data/gut_data_graph_results.R”. If you run the whole file, it will
-save the plot as a eps-file (Figure 5).
+save the plot as a eps-file (Figure 6 and Supporting information S15 and S16).
 
 ## Simulating datasets
 
