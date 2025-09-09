@@ -39,7 +39,7 @@ All functions require the working directory to be the main directory
 (where this README lies). The files are designed such that the user does
 not need to edit any files. All results can be replicated by running
 each file once found in this repository. The directory “functions”
-include functions the are used in other files. All figures are presented
+include functions that are used in other files. All figures are presented
 in the directory “figures”.
 
 ## The real datasets
