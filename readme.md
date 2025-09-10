@@ -78,6 +78,8 @@ are saved to directories “parameter_comparisons/beta/results”. You can
 plot the results with R file “plot_alpha_results.R” in the directory
 “parameter_comparisons/beta/comparison”. (Figures S1 and S2)
 
+Beta parameters impact on the precision matrix are examined with R files in directory "parameter_comparisons/effects_on_network_and_precision_values". These files produce figures Fig2, FigS6 and FigS7. 
+
 ## Selected alpha values
 
 Run all R files in directory “selected_alpha_values”. The results are
@@ -89,7 +91,7 @@ results with R file “selected_alpha_plot.R” in the directory
 
 Credible interval comparisons and the figures depicting the comparisons
 are produced with files found from directory “CI_comparisons”. (Figures
-1 and 2)
+3 and 4)
 
 ## FDR control
 
