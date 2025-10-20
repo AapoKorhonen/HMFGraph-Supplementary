@@ -21,7 +21,7 @@ n <- dim(data_R)[1]
 p <- dim(data_R)[2]
 
 list_of_c_genes <- c( "YXLE_at","PCKA_at", "YTGD_at", 
-                      "AHPC_at", "YHZA_at","YTCF_at",
+                      "AHPC_at", "YTCF_at","YHZA_at",
                       "NDK_at", "GAP_at", "RPSG_at", 
                       "YTGB_at",  "XHLA_at")
 
@@ -116,8 +116,8 @@ plot(1, type = "n", axes=FALSE, xlab="", ylab="")
 
 list_of_c_genes <- c("ribo_p (1)", "YXLE_at (97)"
                      ,"PCKA_at (32)", "YTGD_at (89)" 
-                     ,"AHPC_at (8)", "YHZA_at (62)"
-                     ,"YTCF_at (85)", "NDK_at (31)"
+                     ,"AHPC_at (8)", "YTCF_at (85)"
+                     ,"YHZA_at (62)", "NDK_at (31)"
                      ,"GAP_at (18)", "RPSG_at (40)"
                      ,"YTGB_at (87)", "XHLA_at (44)")
 
@@ -147,42 +147,56 @@ layout(mat = m,heights = c(0.5,0.5,0.5,0.5,0.1,0.15))
 
 
 tulos_var1 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0)
+colnames(data_R)[-1][tulos_var1$adjacency_matrix[1,]==1]
+(1:100)[tulos_var1$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var1$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.0", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var2 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.1)
+colnames(data_R)[tulos_var2$adjacency_matrix[1,]==1]
+(1:100)[tulos_var2$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var2$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.1", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var3 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.20)
+colnames(data_R)[tulos_var3$adjacency_matrix[1,]==1]
+(1:100)[tulos_var3$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var3$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.2", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var4 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.30)
+colnames(data_R)[tulos_var4$adjacency_matrix[1,]==1]
+(1:100)[tulos_var4$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var4$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.3", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var5 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.4)
+colnames(data_R)[tulos_var5$adjacency_matrix[1,]==1]
+(1:100)[tulos_var5$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var5$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.4", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var6 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.5)
+colnames(data_R)[tulos_var6$adjacency_matrix[1,]==1]
+(1:100)[tulos_var6$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var6$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.5", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
 sum(tulos_var$adjacency_matrix)/2
 
 tulos_var7 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.6)
+colnames(data_R)[tulos_var7$adjacency_matrix[1,]==1]
+(1:100)[tulos_var7$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var7$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.6", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
@@ -190,6 +204,8 @@ sum(tulos_var$adjacency_matrix)/2
 
 
 tulos_var8 <- HMFGraph::HMFGraph_GEM_FDR_control(tulos,permutations, target_FDR = 0.7)
+colnames(data_R)[tulos_var8$adjacency_matrix[1,]==1]
+(1:100)[tulos_var8$adjacency_matrix[1,]==1]
 qgraph::qgraph(tulos_var8$adjacency_matrix,diag=F,usePCH=T,vsize= 3, label.color=label_color,
                color = colors, groups = indices,title="Target FDR = 0.7", legend=F,title.cex=4,label.cex=1.5, labels=T
 )
@@ -218,8 +234,8 @@ plot(1, type = "n", axes=FALSE, xlab="", ylab="")
 
 list_of_c_genes <- c("ribo_p (1)", "YXLE_at (97)"
                      ,"PCKA_at (32)", "YTGD_at (89)" 
-                     ,"AHPC_at (8)", "YHZA_at (62)"
-                     ,"YTCF_at (85)", "NDK_at (31)"
+                     ,"AHPC_at (8)", "YTCF_at (85)"
+                     ,"YHZA_at (62)", "NDK_at (31)"
                      ,"GAP_at (18)", "RPSG_at (40)"
                      ,"YTGB_at (87)", "XHLA_at (44)")
 
