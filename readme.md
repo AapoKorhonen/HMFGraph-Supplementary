@@ -39,18 +39,18 @@ All functions require the working directory to be the main directory
 (where this README lies). The files are designed such that the user does
 not need to edit any files. All results can be replicated by running
 each file once found in this repository. The directory “functions”
-include functions the are used in other files. All figures are presented
+include functions that are used in other files. All figures are presented
 in the directory “figures”.
 
 ## The real datasets
 
 The results with riboflavin dataset can be found in the file
 “real_data/ribloflavinv100_graph_results.R”. If you run the whole file,
-it will save the plot as a eps-file (Figure 4).
+it will save the plot as a eps-file (Figure 5 and Supporting information S14).
 
 The results with the gut dataset can be found in the file
 “real_data/gut_data_graph_results.R”. If you run the whole file, it will
-save the plot as a eps-file (Figure 5).
+save the plot as a eps-file (Figure 6 and Supporting information S15 and S16).
 
 ## Simulating datasets
 
@@ -78,6 +78,8 @@ are saved to directories “parameter_comparisons/beta/results”. You can
 plot the results with R file “plot_alpha_results.R” in the directory
 “parameter_comparisons/beta/comparison”. (Figures S1 and S2)
 
+Beta parameters impact on the precision matrix are examined with R files in directory "parameter_comparisons/effects_on_network_and_precision_values". These files produce figures Fig2, FigS6 and FigS7. 
+
 ## Selected alpha values
 
 Run all R files in directory “selected_alpha_values”. The results are
@@ -89,14 +91,19 @@ results with R file “selected_alpha_plot.R” in the directory
 
 Credible interval comparisons and the figures depicting the comparisons
 are produced with files found from directory “CI_comparisons”. (Figures
-1 and 2)
+3 and 4)
 
 ## FDR control
 
+### alpha:
 The file “FDR_control.R” in the directory “FDR_control” produces the
 results for investigating the FDR control. The results are save to the
 directory “FDR_control/results”. The figure depicting the results can be
-produced with the r file “FDR_control_plot.R”. (Figures 3)
+produced with the r file “FDR_control_plot.R”. (Figure 5)
+
+### beta:
+Run all files "FDR_control_beta_CC.R" and "FDR_control_beta_080.R" directory in “FDR_control/beta”. The results can be plotted with files "FDR_control_beta_CC_plot.R" (FigS9) and "FDR_control_a_080_plot.R" (FigS8)
+
 
 ## Network comparisons
 
