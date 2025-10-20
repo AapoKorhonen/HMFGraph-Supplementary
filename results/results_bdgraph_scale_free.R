@@ -464,7 +464,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*10/(p*10+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -558,7 +558,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -1075,7 +1075,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*10/(p*10+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -1169,7 +1169,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -1687,7 +1687,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   adjacency_correct <- scale_free_p_100_n_150_bdgraph_adjacency[,,i]
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*10/(p*10+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -1781,7 +1781,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -2299,7 +2299,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*10/(p*10+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -2393,7 +2393,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n))
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
