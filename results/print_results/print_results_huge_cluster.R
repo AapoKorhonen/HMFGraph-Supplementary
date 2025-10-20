@@ -3,7 +3,7 @@
 # This file is for printing out the results, huge, cluster
 #===============================================================================
 ################################################################################
-
+set.seed(42)
 source("functions/functions_for_result_handeling.R")
 
 
