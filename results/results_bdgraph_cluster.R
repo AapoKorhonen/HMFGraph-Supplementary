@@ -555,8 +555,8 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   adjacency_correct <- cluster_p_100_n_35_bdgraph_adjacency[,,i]
 
   
-  tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n), parallel = F)
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  tulos <- HMFGraph_GEM(data_R, print_t=F, alpha = p*2/(p*2+n))
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
