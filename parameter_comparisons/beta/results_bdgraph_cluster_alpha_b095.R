@@ -65,7 +65,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   p <- dim(data_R)[2]
   
   tulos <- HMFGraph_GEM(data_R, print_t=F , beta = 0.95)
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -177,7 +177,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   p <- dim(data_R)[2]
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, beta = 0.95)
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -287,7 +287,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   p <- dim(data_R)[2]
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, beta = 0.95)
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
@@ -395,7 +395,7 @@ results_HMF <- foreach(i = 1:t1, .combine = 'cbind',.packages=c('HMFGraph'), .op
   p <- dim(data_R)[2]
   
   tulos <- HMFGraph_GEM(data_R, print_t=F, beta = 0.95)
-  permutations <- HMFGraph_GEM_permutations(data_R, tulos)
+  permutations <- HMFGraph_GEM_permutations(data_R, tulos, parallel = F)
   tulos_var <- HMFGraph_GEM_optimal_CI(tulos,permutations)
   
   
