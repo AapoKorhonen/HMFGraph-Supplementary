@@ -4,7 +4,8 @@
 #===============================================================================
 ################################################################################
 
-set.seed(42)
+# Note that NMI results can changes due to the way it is calculated
+
 source("functions/functions_for_result_handeling.R")
 
 
