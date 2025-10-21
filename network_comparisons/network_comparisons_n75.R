@@ -36,7 +36,7 @@ names <- c("accuracy", "bal-accuracy", "MCC", "F1", "TPR", "TNR", "PPV","NPV", "
 
 Value <- 4 # F1 
 round_value <- 2
-n_net <- 2 # which network
+n_net <- 1 # which network
 
 source("functions/functions_for_result_handeling.R")
 
