@@ -3,7 +3,9 @@
 
 # HMFGraph-Supplementary
 
-All R packages that are required for reproducing the results in the
+Korhonen AE, Sarala O, Hautamäki T, Kuismin M, Sillanpää MJ (2025) HMFGraph: Novel Bayesian approach for recovering biological networks. PLoS Comput Biol 21(10): e1013614. https://doi.org/10.1371/journal.pcbi.1013614
+
+All R packages that are required for reproducing the results in publication in the
 repository:
 
 ``` r
